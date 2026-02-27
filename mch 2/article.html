@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Article — MagicCircleHub</title>
+<link rel="stylesheet" href="style.css">
+<style>
+.article-meta { display:flex; align-items:center; gap:12px; font-size:12px; color:var(--muted); margin-bottom:20px; flex-wrap:wrap; }
+.article-body { max-width:680px; }
+.article-body p { font-size:15px; line-height:1.8; color:#222; margin-bottom:18px; }
+.article-body h2 { font-family:'Frank Ruhl Libre',serif; font-size:20px; font-weight:700; margin:28px 0 12px; }
+.article-body ul { padding-left:20px; margin-bottom:18px; }
+.article-body ul li { font-size:14.5px; line-height:1.75; color:#333; margin-bottom:6px; }
+.article-aside { position:sticky; top:80px; }
+.why-matters {
+  background:var(--ink); color:white; padding:20px 24px; margin:24px 0;
+  border-left:4px solid var(--fresh);
+}
+.why-matters h3 { font-family:'Frank Ruhl Libre',serif; font-size:16px; margin-bottom:8px; }
+.why-matters p { font-size:13px; line-height:1.7; color:#ccc; margin:0; }
+.back-link { font-size:13px; color:var(--muted); margin-bottom:24px; display:inline-flex; align-items:center; gap:6px; transition:color .15s; }
+.back-link:hover { color:var(--ink); }
+</style>
+</head>
+<body>
+<div id="shell"></div>
+<div class="page">
+  <a href="index.html" class="back-link">← Back to News</a>
+  <div class="two-col">
+    <div class="article-body" id="articleContent">
+      <!-- Populated by JS -->
+    </div>
+    <aside class="sidebar article-aside">
+      <div class="sidebar-card">
+        <div class="sidebar-head">Related</div>
+        <div class="sidebar-links" id="relatedLinks"></div>
+      </div>
+      <div class="sidebar-card" style="margin-top:16px;">
+        <div class="sidebar-head green">NQ Salaries 2025</div>
+        <div class="stat-row"><span class="stat-label">A&O Shearman</span><span class="stat-value" style="color:var(--green)">£150,000</span></div>
+        <div class="stat-row"><span class="stat-label">Clifford Chance</span><span class="stat-value" style="color:var(--green)">£150,000</span></div>
+        <div class="stat-row"><span class="stat-label">Freshfields</span><span class="stat-value" style="color:var(--green)">£150,000</span></div>
+        <div class="stat-row"><span class="stat-label">Linklaters</span><span class="stat-value" style="color:var(--green)">£150,000</span></div>
+        <div class="stat-row"><span class="stat-label">Slaughter and May</span><span class="stat-value">~£125k+</span></div>
+      </div>
+    </aside>
+  </div>
+</div>
+<div id="footer-shell"></div>
+<script src="site.js"></script>
+<script>
+document.getElementById('shell').innerHTML = SITE.nav('news');
+document.getElementById('footer-shell').innerHTML = SITE.footer();
+SITE.initDate();
+
+const params = new URLSearchParams(window.location.search);
+const id = params.get('id') || 'freshfields-record-revenue';
+
+const articles = {
+  'freshfields-record-revenue': {
+    firm: 'fresh', firmName: 'Freshfields', cat: 'Strategy',
+    date: '26 Feb 2026',
+    title: 'Freshfields Posts Record 2025 Revenue as US Expansion Strategy Pays Off',
+    body: `
+      <p>Freshfields has reported its strongest financial results in the firm's history for the 2025 financial year, with revenue and profit per equity partner (PEP) reaching new highs. PEP is understood to be approaching £3 million — a figure that narrows the gap between the Magic Circle and elite US firms in London for the first time.</p>
+      <h2>The US Bet</h2>
+      <p>The results vindicate Freshfields' controversial decision five years ago to invest aggressively in the United States. The firm has more than doubled its US headcount to approximately 500 lawyers — a significant commitment for a firm that was historically a London and European powerhouse.</p>
+      <p>The firm cracked the global top five M&A advisers by deal value in 2025 — a ranking previously dominated entirely by Wall Street firms and previously unachievable for a London-headquartered practice.</p>
+      <h2>What This Means for the Practice</h2>
+      <p>The antitrust and competition practice has been particularly busy, reflecting the global regulatory scrutiny of tech sector M&A. Freshfields' competition team has been instructed on some of the largest and most complex clearance processes in recent years.</p>
+      <p>The disputes and international arbitration team is also growing rapidly — driven by geopolitical complexity, energy sector disputes and cross-border insolvencies.</p>
+      <div class="why-matters">
+        <h3>Why This Matters for Your Application</h3>
+        <p>If you're applying to Freshfields, mention the US expansion strategy specifically — and more importantly, what it means for the quality of deals trainees will work on. A firm that advises on the largest US-European M&A transactions gives trainees access to deal complexity that simply didn't exist at Magic Circle level five years ago. Show you understand the strategic logic, not just the headline numbers.</p>
+      </div>
+      <h2>The Competitive Landscape</h2>
+      <p>The result puts pressure on the other Magic Circle firms. Clifford Chance and Linklaters are both investing in the US, but from a smaller base. A&O Shearman's US capability is arguably the deepest post-merger, but the integration costs and complexity have weighed on their financials in the short term.</p>
+    `,
+    related: [
+      {title: 'Linklaters Fastest-Growing MC Firm in US', href: 'article.html?id=link-us-growth'},
+      {title: 'CC Poaches PE Partner from Freshfields', href: 'article.html?id=cc-pe-hire'},
+      {title: 'Freshfields — Full Firm Profile', href: 'firms.html#fresh'},
+    ]
+  },
+  'cc-pe-hire': {
+    firm: 'cc', firmName: 'Clifford Chance', cat: 'People',
+    date: '24 Jan 2026',
+    title: 'Clifford Chance Poaches Senior Private Equity Partner from Freshfields in New York Push',
+    body: `
+      <p>Clifford Chance has announced the hire of a senior cross-border M&A and leveraged buyout specialist from Freshfields for its New York office — a significant move in the ongoing talent war between Magic Circle firms for US private equity mandate flow.</p>
+      <h2>The Strategic Significance</h2>
+      <p>The hire signals that Clifford Chance is willing to invest aggressively in lateral talent to build its US private equity credentials. The new partner has a strong track record advising on complex cross-border LBO transactions, particularly in the healthcare and technology sectors.</p>
+      <p>The move also represents a notable loss for Freshfields, which has staked its recent growth strategy heavily on the US PE market. However, Freshfields' record 2025 revenues suggest the departure is unlikely to materially impact the firm's momentum.</p>
+      <div class="why-matters">
+        <h3>Why This Matters for Your Application</h3>
+        <p>If applying to Clifford Chance, this hire is a useful data point to reference when discussing the firm's US strategy. It shows you're tracking not just deal flow but also the talent moves that shape a firm's capabilities — exactly the kind of commercial awareness Magic Circle interviewers look for.</p>
+      </div>
+    `,
+    related: [
+      {title: 'Freshfields Record 2025 Revenue', href: 'article.html?id=freshfields-record-revenue'},
+      {title: 'Clifford Chance — Full Firm Profile', href: 'firms.html#cc'},
+      {title: 'Compare the Magic Circle', href: 'compare.html'},
+    ]
+  },
+  'link-egypt': {
+    firm: 'link', firmName: 'Linklaters', cat: 'Deals',
+    date: '18 Feb 2026',
+    title: "Linklaters Advises on Egypt's $2B Sovereign Bond Return to Global Markets",
+    body: `
+      <p>Linklaters has acted as international counsel on Egypt's return to the international debt capital markets — the country's first sovereign bond issuance since 2023. The transaction comprised two tranches: a five-year and an eight-year bond, raising a total of $2 billion.</p>
+      <h2>The Deal</h2>
+      <p>Egypt had been absent from international bond markets for approximately two years following a period of economic stress and IMF negotiations. The successful issuance — which was reportedly significantly oversubscribed — signals returning investor confidence in Egyptian sovereign credit.</p>
+      <p>Linklaters has longstanding expertise in Middle Eastern and North African sovereign debt capital markets, making it a natural choice for Egypt's return. The firm advised on the structure of the offering, the terms of the bonds, and the disclosure obligations under international securities law.</p>
+      <div class="why-matters">
+        <h3>Why This Matters for Your Application</h3>
+        <p>This deal is a perfect reference point for Linklaters applicants interested in capital markets work. It illustrates the firm's emerging markets strength, the complexity of sovereign bond work (political risk, IMF conditions, multiple governing law jurisdictions), and the real-world importance of what capital markets lawyers do. It's the kind of deal that sounds genuinely interesting in an interview answer — not just "a big deal."</p>
+      </div>
+    `,
+    related: [
+      {title: 'Linklaters Fastest-Growing in US', href: 'article.html?id=link-us-growth'},
+      {title: 'Linklaters — Full Firm Profile', href: 'firms.html#link'},
+      {title: 'Compare the Magic Circle', href: 'compare.html'},
+    ]
+  },
+  'ao-infra-deal': {
+    firm: 'ao', firmName: 'A&O Shearman', cat: 'Deals',
+    date: '20 Feb 2026',
+    title: 'A&O Shearman Advises on €2.4B European Infrastructure Bond Issuance',
+    body: `
+      <p>A&O Shearman has advised on a €2.4 billion infrastructure bond issuance — one of the largest in Europe in the first quarter of 2026. The transaction demonstrates the combined firm's depth in European structured finance and capital markets following the Allen & Overy and Shearman & Sterling merger.</p>
+      <h2>Infrastructure Finance Context</h2>
+      <p>Infrastructure bond issuances have grown significantly in volume as European governments and private sector operators seek to finance the energy transition, digital infrastructure buildout and transport network upgrades. The market has been particularly active in 2025-26 as interest rates begin to stabilise.</p>
+      <div class="why-matters">
+        <h3>Why This Matters for Your Application</h3>
+        <p>A useful deal to reference when discussing A&O Shearman's banking and finance capabilities — particularly the firm's ability to execute high-value structured finance transactions that leverage both the old A&O European network and the Shearman capital markets expertise. Shows the merger is generating real deal synergies.</p>
+      </div>
+    `,
+    related: [
+      {title: 'A&O Shearman — Full Firm Profile', href: 'firms.html#ao'},
+      {title: 'Compare the Magic Circle', href: 'compare.html'},
+    ]
+  },
+  'link-us-growth': {
+    firm: 'link', firmName: 'Linklaters', cat: 'Strategy',
+    date: '2 Jan 2026',
+    title: 'Linklaters Fastest-Growing Magic Circle Firm in US — but Starting from Smallest Base',
+    body: `
+      <p>New LLP accounts filed at Companies House confirm that Linklaters' US revenue grew faster than both Clifford Chance and Freshfields in percentage terms over the last financial year. However, the firm still trails significantly in absolute revenue terms, reflecting the fact that it entered the US market later and with a smaller presence than its Magic Circle peers.</p>
+      <h2>The Growth Drivers</h2>
+      <p>The growth has been driven primarily by lateral hires from Shearman & Sterling — many of whom were already known to Linklaters and chose to join rather than follow colleagues to A&O Shearman. Several senior M&A partners with strong PE relationships have joined the New York office over the past 18 months.</p>
+      <div class="why-matters">
+        <h3>Why This Matters for Your Application</h3>
+        <p>Shows Linklaters is on an upward trajectory in the US — useful context if you want to work on transatlantic transactions. The fastest growth rate (even from a smaller base) shows momentum. Reference this as evidence that you've tracked the firm's development, not just its current state.</p>
+      </div>
+    `,
+    related: [
+      {title: "Linklaters — Egypt Sovereign Bond", href: 'article.html?id=link-egypt'},
+      {title: 'Linklaters — Full Firm Profile', href: 'firms.html#link'},
+    ]
+  }
+};
+
+// Fallback for unknown slugs
+const art = articles[id] || articles['freshfields-record-revenue'];
+
+document.title = art.title + ' — MagicCircleHub';
+
+const firmColors = {ao:'var(--ao)',cc:'var(--cc)',fresh:'var(--fresh)',link:'var(--link)',slaughter:'var(--slaughter)'};
+const col = firmColors[art.firm] || 'var(--ink)';
+
+document.getElementById('articleContent').innerHTML = `
+  <div class="article-meta">
+    <span class="tag firm ${art.firm}" style="background:${col}">${art.firmName}</span>
+    <span class="tag">${art.cat}</span>
+    <span>${art.date}</span>
+  </div>
+  <h1 style="font-family:'Frank Ruhl Libre',serif;font-size:30px;font-weight:900;line-height:1.2;margin-bottom:20px;">${art.title}</h1>
+  ${art.body}
+`;
+
+const relLinks = document.getElementById('relatedLinks');
+(art.related||[]).forEach(r => {
+  relLinks.innerHTML += `<a href="${r.href}" class="sidebar-link">${r.title}<span class="s-arrow">→</span></a>`;
+});
+</script>
+</body>
+</html>

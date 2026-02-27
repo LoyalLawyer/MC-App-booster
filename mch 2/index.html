@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MagicCircleHub — Daily Intelligence for Law Applicants</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="shell"></div>
+
+<!-- FIRM FILTER TABS -->
+<div class="firm-tabs">
+  <div class="firm-tabs-inner">
+    <button class="firm-tab active" data-firm="all"      onclick="filterFirm(this)">All Firms</button>
+    <button class="firm-tab" data-firm="ao"       onclick="filterFirm(this)"><span class="firm-dot" style="background:var(--ao)"></span>A&O Shearman</button>
+    <button class="firm-tab" data-firm="cc"       onclick="filterFirm(this)"><span class="firm-dot" style="background:var(--cc)"></span>Clifford Chance</button>
+    <button class="firm-tab" data-firm="fresh"    onclick="filterFirm(this)"><span class="firm-dot" style="background:var(--fresh)"></span>Freshfields</button>
+    <button class="firm-tab" data-firm="link"     onclick="filterFirm(this)"><span class="firm-dot" style="background:var(--link)"></span>Linklaters</button>
+    <button class="firm-tab" data-firm="slaughter"onclick="filterFirm(this)"><span class="firm-dot" style="background:var(--slaughter)"></span>Slaughter and May</button>
+  </div>
+</div>
+
+<div class="page">
+  <div class="two-col">
+
+    <!-- MAIN FEED -->
+    <main>
+
+      <!-- BREAKING -->
+      <div class="breaking">
+        <span class="breaking-label">BREAKING</span>
+        <span>Freshfields posts record revenue for 2025 — PEP nearing £3M as US expansion pays off</span>
+      </div>
+
+      <!-- CATEGORY CHIPS -->
+      <div class="filter-bar">
+        <button class="chip active" data-cat="all"      onclick="filterCat(this)">All</button>
+        <button class="chip" data-cat="deals"    onclick="filterCat(this)">Deals</button>
+        <button class="chip" data-cat="people"   onclick="filterCat(this)">People</button>
+        <button class="chip" data-cat="tc"       onclick="filterCat(this)">Training Contracts</button>
+        <button class="chip" data-cat="strategy" onclick="filterCat(this)">Strategy</button>
+        <button class="chip" data-cat="salary"   onclick="filterCat(this)">Pay</button>
+      </div>
+
+      <!-- HERO -->
+      <article class="hero-card news-item" data-firm="fresh" data-cat="strategy" onclick="openArticle('freshfields-record-revenue')">
+        <div class="hero-img" style="background:#3a0a0a;">
+          <div class="hero-img-abbr">FF</div>
+          <span class="firm-badge">Freshfields</span>
+        </div>
+        <div class="hero-body">
+          <div class="cat-label">Strategy · Revenue</div>
+          <div class="card-title large">Freshfields Posts Record 2025 Revenue as US Expansion Strategy Pays Off</div>
+          <div class="card-excerpt">The firm has more than doubled its US headcount to ~500 lawyers over five years, cracking the global top five M&A advisers by deal value for the first time. Profit per equity partner is approaching £3M — narrowing the gap with elite US firms significantly.</div>
+          <div class="card-meta">
+            <span>26 Feb 2026</span>
+            <span class="read-link">Read more →</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- 2-COL GRID -->
+      <div class="news-grid">
+
+        <article class="news-card news-item" data-firm="cc" data-cat="people" onclick="openArticle('cc-pe-hire')">
+          <div class="tags"><span class="tag firm cc">Clifford Chance</span><span class="tag">People</span></div>
+          <div class="card-title">CC Poaches Senior PE Partner from Freshfields in New York Push</div>
+          <div class="card-excerpt">CC announced the hire of a cross-border M&A and LBO specialist from Freshfields — part of its accelerated US growth strategy targeting the private equity market.</div>
+          <div class="card-meta"><span>24 Jan 2026</span><span>M&A · PE</span></div>
+        </article>
+
+        <article class="news-card news-item" data-firm="link" data-cat="strategy" onclick="openArticle('link-us-growth')">
+          <div class="tags"><span class="tag firm link">Linklaters</span><span class="tag">Strategy</span></div>
+          <div class="card-title">Linklaters Fastest-Growing Magic Circle Firm in the US — but from the Smallest Base</div>
+          <div class="card-excerpt">US revenue grew faster than CC and Freshfields in percentage terms, though it still trails in absolute size. Key M&A hires from Shearman & Sterling are driving mandate flow.</div>
+          <div class="card-meta"><span>2 Jan 2026</span><span>US · Revenue</span></div>
+        </article>
+
+        <article class="news-card news-item" data-firm="ao" data-cat="deals" onclick="openArticle('ao-infra-deal')">
+          <div class="tags"><span class="tag firm ao">A&O Shearman</span><span class="tag">Deals</span></div>
+          <div class="card-title">A&O Shearman Advises on €2.4B European Infrastructure Bond</div>
+          <div class="card-excerpt">The combined firm — ~3,900 lawyers globally — advised on one of the largest infrastructure bond issuances of Q1 2026, demonstrating post-merger deal-flow potential.</div>
+          <div class="card-meta"><span>20 Feb 2026</span><span>Finance · Infrastructure</span></div>
+        </article>
+
+        <article class="news-card news-item" data-firm="link" data-cat="deals" onclick="openArticle('link-egypt')">
+          <div class="tags"><span class="tag firm link">Linklaters</span><span class="tag">Deals</span></div>
+          <div class="card-title">Linklaters Advises on Egypt's $2B Sovereign Bond Return to Global Markets</div>
+          <div class="card-excerpt">Linklaters acted as international counsel on Egypt's return to international debt markets — five- and eight-year bonds after a two-year absence since 2023.</div>
+          <div class="card-meta"><span>18 Feb 2026</span><span>Capital Markets</span></div>
+        </article>
+
+      </div>
+
+      <!-- PROMOTIONS -->
+      <div class="section-head"><h2>Partner Promotions 2025</h2></div>
+
+      <div class="list-item news-item" data-firm="link" data-cat="people" onclick="openArticle('link-promotions')">
+        <span class="list-dot" style="background:var(--link)"></span>
+        <span class="list-title">Linklaters Names 34 New Partners — Biggest Increase Across the Magic Circle</span>
+        <span class="list-date">Feb 2026</span>
+      </div>
+      <div class="list-item news-item" data-firm="cc" data-cat="people" onclick="openArticle('cc-promotions')">
+        <span class="list-dot" style="background:var(--cc)"></span>
+        <span class="list-title">Clifford Chance Promotes 31 to Partner, Slightly Up on 2024's 29</span>
+        <span class="list-date">Feb 2026</span>
+      </div>
+      <div class="list-item news-item" data-firm="fresh" data-cat="people" onclick="openArticle('fresh-promotions')">
+        <span class="list-dot" style="background:var(--fresh)"></span>
+        <span class="list-title">Freshfields Makes Up 25 New Partners in Steady Global Promotion Round</span>
+        <span class="list-date">Feb 2026</span>
+      </div>
+      <div class="list-item news-item" data-firm="ao" data-cat="people" onclick="openArticle('ao-promotions')">
+        <span class="list-dot" style="background:var(--ao)"></span>
+        <span class="list-title">A&O Shearman Posts Lower Promotions Than Prior Years — Post-Merger Integration Cited</span>
+        <span class="list-date">Feb 2026</span>
+      </div>
+      <div class="list-item news-item" data-firm="slaughter" data-cat="people" onclick="openArticle('slaughter-promotions')">
+        <span class="list-dot" style="background:var(--slaughter)"></span>
+        <span class="list-title">Slaughter and May Promotes Six New Partners — Up One from 2024</span>
+        <span class="list-date">Feb 2026</span>
+      </div>
+
+      <!-- STRATEGY -->
+      <div class="section-head"><h2>Strategy & Market</h2></div>
+      <div class="news-grid">
+
+        <article class="news-card news-item" data-firm="slaughter" data-cat="strategy" onclick="openArticle('slaughter-private-credit')">
+          <div class="tags"><span class="tag firm slaughter">Slaughter and May</span><span class="tag">Strategy</span></div>
+          <div class="card-title">Slaughter and May Eyes Private Credit Expansion — Only MC Firm Yet to Chase US</div>
+          <div class="card-excerpt">Signals appetite to build in private credit and PE — a significant strategic shift for the most UK-centric of the five.</div>
+          <div class="card-meta"><span>Jan 2026</span></div>
+        </article>
+
+        <article class="news-card news-item" data-firm="cc" data-cat="deals" onclick="openArticle('mc-middle-east')">
+          <div class="tags"><span class="tag firm cc">Clifford Chance</span><span class="tag">Middle East</span></div>
+          <div class="card-title">MC Firms Bolster Middle East Offices with 14 New Counsel Across Dubai, Riyadh and Abu Dhabi</div>
+          <div class="card-excerpt">Appointments spanning banking, capital markets and dispute resolution — signalling continued Gulf growth ambitions across three Magic Circle firms.</div>
+          <div class="card-meta"><span>Dec 2025</span></div>
+        </article>
+
+      </div>
+
+      <!-- PAY -->
+      <div class="section-head"><h2>Pay & Salaries</h2></div>
+
+      <div class="list-item news-item" data-firm="all" data-cat="salary" onclick="window.location='salaries.html'">
+        <span class="list-dot" style="background:var(--green)"></span>
+        <span class="list-title">NQ Salaries Hit £150,000 at A&O, CC, Freshfields and Linklaters — Slaughter Holds Out</span>
+        <span class="list-date">2025</span>
+      </div>
+      <div class="list-item news-item" data-firm="slaughter" data-cat="salary" onclick="window.location='salaries.html'">
+        <span class="list-dot" style="background:var(--slaughter)"></span>
+        <span class="list-title">Slaughter and May Maintains Unique Pay Structure — No Billing Targets, Bi-Annual Reviews</span>
+        <span class="list-date">2025</span>
+      </div>
+      <div class="list-item news-item" data-firm="all" data-cat="salary" onclick="window.location='salaries.html'">
+        <span class="list-dot" style="background:var(--amber)"></span>
+        <span class="list-title">US Firms Hold 35–40% Pay Advantage Over Magic Circle for Junior Lawyers — Talent War Intensifying</span>
+        <span class="list-date">2025</span>
+      </div>
+
+      <!-- NEWSLETTER -->
+      <div class="newsletter-banner" id="newsletter">
+        <h3>Get the Weekly Digest</h3>
+        <p>Five Magic Circle developments every Friday — written for applicants, not partners.</p>
+        <div class="nl-form">
+          <input type="email" placeholder="your@email.com" id="nlEmail">
+          <button class="nl-btn" onclick="subscribe()">Subscribe Free</button>
+        </div>
+        <p id="nl-msg" style="font-size:12px;color:#aaa;margin-top:12px;display:none;"></p>
+      </div>
+
+    </main>
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+
+      <div class="sidebar-card">
+        <div class="sidebar-head">At a Glance — 2025/26</div>
+        <div class="stat-row"><span class="stat-label">Freshfields PEP</span><span class="stat-value">~£3M</span></div>
+        <div class="stat-row"><span class="stat-label">Linklaters PEP</span><span class="stat-value">£2.2M</span></div>
+        <div class="stat-row"><span class="stat-label">MC NQ Salary</span><span class="stat-value">£150,000</span></div>
+        <div class="stat-row"><span class="stat-label">A&O Shearman Size</span><span class="stat-value">~3,900</span></div>
+        <div class="stat-row"><span class="stat-label">Trainee Intake (each)</span><span class="stat-value">85–120</span></div>
+      </div>
+
+      <div class="sidebar-card">
+        <div class="sidebar-head amber">Upcoming TC Deadlines</div>
+        <div class="deadline-item">
+          <div class="deadline-date"><div class="dl-month">Mar</div><div class="dl-day">01</div></div>
+          <div><div class="dl-text">Spring Vacation Scheme</div><div class="dl-firm">Clifford Chance</div></div>
+        </div>
+        <div class="deadline-item">
+          <div class="deadline-date"><div class="dl-month">Mar</div><div class="dl-day">15</div></div>
+          <div><div class="dl-text">2027 Training Contract</div><div class="dl-firm">Freshfields</div></div>
+        </div>
+        <div class="deadline-item">
+          <div class="deadline-date"><div class="dl-month">Apr</div><div class="dl-day">04</div></div>
+          <div><div class="dl-text">Summer Vacation Scheme</div><div class="dl-firm">Linklaters</div></div>
+        </div>
+        <div class="deadline-item">
+          <div class="deadline-date"><div class="dl-month">Apr</div><div class="dl-day">20</div></div>
+          <div><div class="dl-text">2027 Training Contract</div><div class="dl-firm">A&O Shearman</div></div>
+        </div>
+        <a href="deadlines.html" style="display:block;padding:10px 16px;font-size:12px;font-weight:600;text-align:center;border-top:1px solid var(--border);color:var(--muted);transition:color .15s;" onmouseover="this.style.color='var(--ink)'" onmouseout="this.style.color='var(--muted)'">View all deadlines →</a>
+      </div>
+
+      <div class="sidebar-card">
+        <div class="sidebar-head green">NQ Salaries 2025</div>
+        <div class="stat-row"><span class="stat-label">A&O Shearman</span><span class="stat-value" style="color:var(--green)">£150,000</span></div>
+        <div class="stat-row"><span class="stat-label">Clifford Chance</span><span class="stat-value" style="color:var(--green)">£150,000</span></div>
+        <div class="stat-row"><span class="stat-label">Freshfields</span><span class="stat-value" style="color:var(--green)">£150,000</span></div>
+        <div class="stat-row"><span class="stat-label">Linklaters</span><span class="stat-value" style="color:var(--green)">£150,000</span></div>
+        <div class="stat-row"><span class="stat-label">Slaughter and May</span><span class="stat-value">~£125k+</span></div>
+        <a href="salaries.html" style="display:block;padding:10px 16px;font-size:12px;font-weight:600;text-align:center;border-top:1px solid var(--border);color:var(--muted);transition:color .15s;" onmouseover="this.style.color='var(--ink)'" onmouseout="this.style.color='var(--muted)'">Full salary breakdown →</a>
+      </div>
+
+      <div class="sidebar-card">
+        <div class="sidebar-head">Quick Links</div>
+        <div class="sidebar-links">
+          <a href="firms.html" class="sidebar-link">Firm Profiles <span class="s-arrow">→</span></a>
+          <a href="compare.html" class="sidebar-link">Compare All Firms <span class="s-arrow">→</span></a>
+          <a href="interview.html" class="sidebar-link">Interview Intel <span class="s-arrow">→</span></a>
+          <a href="deadlines.html" class="sidebar-link">TC Deadlines <span class="s-arrow">→</span></a>
+        </div>
+      </div>
+
+    </aside>
+  </div>
+</div>
+
+<div id="footer-shell"></div>
+
+<script src="site.js"></script>
+<script>
+document.getElementById('shell').innerHTML = SITE.nav('news');
+document.getElementById('footer-shell').innerHTML = SITE.footer();
+SITE.initDate();
+
+function filterFirm(el) {
+  document.querySelectorAll('.firm-tab').forEach(t => t.classList.remove('active'));
+  el.classList.add('active');
+  const firm = el.dataset.firm;
+  document.querySelectorAll('.news-item').forEach(item => {
+    const f = item.dataset.firm;
+    item.style.display = (firm === 'all' || f === firm || f === 'all') ? '' : 'none';
+  });
+}
+
+function filterCat(el) {
+  document.querySelectorAll('.chip').forEach(c => c.classList.remove('active'));
+  el.classList.add('active');
+  const cat = el.dataset.cat;
+  document.querySelectorAll('.news-item').forEach(item => {
+    item.style.display = (cat === 'all' || item.dataset.cat === cat) ? '' : 'none';
+  });
+}
+
+function openArticle(slug) {
+  // For prototype: navigate to article page with slug as param
+  window.location.href = `article.html?id=${slug}`;
+}
+
+function subscribe() {
+  const email = document.getElementById('nlEmail').value.trim();
+  const msg = document.getElementById('nl-msg');
+  if (!email || !email.includes('@')) {
+    msg.textContent = 'Please enter a valid email address.';
+    msg.style.display = 'block'; return;
+  }
+  msg.textContent = '✓ You\'re subscribed! First digest lands this Friday.';
+  msg.style.color = '#7ddb9e';
+  msg.style.display = 'block';
+  document.getElementById('nlEmail').value = '';
+}
+</script>
+</body>
+</html>

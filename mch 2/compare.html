@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Compare Firms — MagicCircleHub</title>
+<link rel="stylesheet" href="style.css">
+<style>
+.compare-table th:not(:first-child) { text-align:center; min-width:130px; }
+.compare-table td:not(:first-child) { text-align:center; }
+.tick { color: #1a7a1a; font-size:16px; font-weight:700; }
+.cross { color: #aaa; font-size:14px; }
+.best { background:#f0faf0 !important; }
+.highlight-row td { font-weight:500; }
+</style>
+</head>
+<body>
+<div id="shell"></div>
+
+<div class="page">
+  <div class="page-title">Compare the Magic Circle</div>
+  <div class="page-subtitle" style="margin-bottom:28px;">Every key metric in one place — built for your "Why This Firm?" research.</div>
+
+  <div style="overflow-x:auto;">
+  <table class="compare-table">
+    <thead>
+      <tr>
+        <th style="width:180px;"></th>
+        <th class="ao-col">A&O Shearman</th>
+        <th class="cc-col">Clifford Chance</th>
+        <th class="fr-col">Freshfields</th>
+        <th class="lk-col">Linklaters</th>
+        <th class="sl-col">Slaughter &amp; May</th>
+      </tr>
+    </thead>
+    <tbody>
+
+      <tr class="highlight-row"><td>HQ</td><td>London / NY</td><td>London</td><td>London</td><td>London</td><td>London</td></tr>
+      <tr><td>Global lawyers</td><td>~3,900</td><td>~6,500</td><td>~4,000</td><td>~3,000</td><td class="best">~500</td></tr>
+      <tr><td>Offices</td><td>40+</td><td>30+</td><td>27+</td><td>20+</td><td class="best">4</td></tr>
+      <tr><td>Trainee intake/yr</td><td>~120</td><td>~100</td><td>~90</td><td>~90</td><td>~85</td></tr>
+
+      <tr class="highlight-row"><td colspan="6" style="background:var(--faint);font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--muted);text-align:left;">Pay</td></tr>
+      <tr><td>1st yr trainee</td><td>£56,000</td><td>£56,000</td><td>£56,000</td><td>£56,000</td><td>~£50,000</td></tr>
+      <tr><td>2nd yr trainee</td><td>£61,000</td><td>£61,000</td><td>£61,000</td><td>£61,000</td><td>~£55,000</td></tr>
+      <tr><td>NQ salary</td><td class="best">£150,000</td><td class="best">£150,000</td><td class="best">£150,000</td><td class="best">£150,000</td><td>~£125k+</td></tr>
+      <tr><td>Billing targets</td><td>Yes</td><td>Yes</td><td>Yes</td><td>Yes</td><td class="best"><span class="tick">None</span></td></tr>
+      <tr><td>PEP (2025)</td><td>TBC post-merger</td><td>~£2.5M</td><td class="best">~£3M</td><td>£2.2M</td><td>~£2M</td></tr>
+
+      <tr class="highlight-row"><td colspan="6" style="background:var(--faint);font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--muted);text-align:left;">Strengths</td></tr>
+      <tr><td>M&amp;A</td><td><span class="tick">●●●</span></td><td><span class="tick">●●●</span></td><td><span class="tick">●●●</span></td><td><span class="tick">●●</span></td><td><span class="tick">●●●</span></td></tr>
+      <tr><td>Capital Markets</td><td><span class="tick">●●●</span></td><td><span class="tick">●●●</span></td><td><span class="tick">●●</span></td><td><span class="tick">●●●</span></td><td><span class="tick">●●</span></td></tr>
+      <tr><td>Banking &amp; Finance</td><td class="best"><span class="tick">●●●</span></td><td><span class="tick">●●●</span></td><td><span class="tick">●●</span></td><td><span class="tick">●●</span></td><td><span class="tick">●●</span></td></tr>
+      <tr><td>Competition/Antitrust</td><td><span class="tick">●●</span></td><td><span class="tick">●●</span></td><td class="best"><span class="tick">●●●</span></td><td><span class="tick">●●</span></td><td><span class="tick">●●</span></td></tr>
+      <tr><td>Disputes / Arbitration</td><td><span class="tick">●●</span></td><td><span class="tick">●●●</span></td><td class="best"><span class="tick">●●●</span></td><td><span class="tick">●●</span></td><td><span class="tick">●●</span></td></tr>
+      <tr><td>Private Equity</td><td><span class="tick">●●</span></td><td><span class="tick">●●●</span></td><td class="best"><span class="tick">●●●</span></td><td><span class="tick">●●</span></td><td><span class="tick">●●</span></td></tr>
+      <tr><td>Financial Regulation</td><td class="best"><span class="tick">●●●</span></td><td><span class="tick">●●●</span></td><td><span class="tick">●●</span></td><td><span class="tick">●●●</span></td><td><span class="tick">●●</span></td></tr>
+
+      <tr class="highlight-row"><td colspan="6" style="background:var(--faint);font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--muted);text-align:left;">Culture & Structure</td></tr>
+      <tr><td>US presence</td><td class="best">Very strong (merger)</td><td>Strong (growing fast)</td><td>Strong (growing fast)</td><td>Building</td><td>Minimal (by choice)</td></tr>
+      <tr><td>Middle East offices</td><td><span class="tick">✓</span></td><td><span class="tick">✓</span></td><td><span class="tick">✓</span></td><td><span class="tick">✓</span></td><td><span class="cross">—</span></td></tr>
+      <tr><td>International secondments</td><td class="best">Extensive</td><td>Extensive</td><td>Extensive</td><td>Extensive</td><td>Limited (model)</td></tr>
+      <tr><td>Training contract seats</td><td>4 × 6m</td><td>4 × 6m</td><td>4 × 6m</td><td>4 × 6m</td><td>4 × 6m</td></tr>
+      <tr><td>Culture style</td><td>Formal / ambitious</td><td>International / open</td><td>Intellectual / driven</td><td>Collaborative</td><td class="best">Collegiate / relaxed</td></tr>
+      <tr><td>TC competition</td><td>Very high</td><td>Very high</td><td>Very high</td><td>Very high</td><td>Very high</td></tr>
+      <tr><td>Partner promotion rate</td><td>Lower post-merger</td><td>Steady (31 in 2025)</td><td>Steady (25 in 2025)</td><td class="best">High (34 in 2025)</td><td>Selective (6 in 2025)</td></tr>
+
+      <tr class="highlight-row"><td colspan="6" style="background:var(--faint);font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--muted);text-align:left;">Application</td></tr>
+      <tr><td>TC deadline (approx)</td><td>Apr 2026</td><td>Mar 2026</td><td>Mar 2026</td><td>Apr 2026</td><td>Nov 2026</td></tr>
+      <tr><td>Online application</td><td><span class="tick">✓</span></td><td><span class="tick">✓</span></td><td><span class="tick">✓</span></td><td><span class="tick">✓</span></td><td><span class="tick">✓</span></td></tr>
+      <tr><td>Written application required</td><td><span class="tick">✓</span></td><td><span class="tick">✓</span></td><td><span class="tick">✓</span></td><td><span class="tick">✓</span></td><td><span class="tick">✓</span></td></tr>
+      <tr><td>Assessment centre</td><td><span class="tick">✓</span></td><td><span class="tick">✓</span></td><td><span class="tick">✓</span></td><td><span class="tick">✓</span></td><td><span class="tick">✓</span></td></tr>
+
+    </tbody>
+  </table>
+  </div>
+
+  <div style="margin-top:12px;padding:12px 16px;background:var(--faint);border:1px solid var(--border);font-size:12px;color:var(--muted);">
+    ● = Strong &nbsp; ●● = Very Strong &nbsp; ●●● = Elite/Market-Leading &nbsp;·&nbsp; Green cells indicate best-in-class for that metric.
+    Salary and intake figures are approximate and updated periodically. Always verify with official firm sources before applications.
+  </div>
+
+  <!-- Narrative section -->
+  <div class="section-head" style="margin-top:36px;"><h2>What the Data Tells You</h2></div>
+  <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;margin-bottom:32px;">
+    <div class="card" style="padding:20px;">
+      <div style="font-family:'Frank Ruhl Libre',serif;font-size:16px;font-weight:700;margin-bottom:8px;">If you want US PE exposure</div>
+      <div style="font-size:13px;color:var(--muted);line-height:1.7;">Freshfields or Clifford Chance. Both are aggressively growing US PE practices. Freshfields' record 2025 revenues prove the strategy is working. CC's January 2026 PE partner hire signals the same intent.</div>
+    </div>
+    <div class="card" style="padding:20px;">
+      <div style="font-family:'Frank Ruhl Libre',serif;font-size:16px;font-weight:700;margin-bottom:8px;">If you want the best UK M&A work</div>
+      <div style="font-size:13px;color:var(--muted);line-height:1.7;">Slaughter and May. Despite being the smallest, they're instructed on a disproportionate share of FTSE 100 transactions. Trainees get early responsibility. The "best friend" model means you still get cross-border exposure.</div>
+    </div>
+    <div class="card" style="padding:20px;">
+      <div style="font-family:'Frank Ruhl Libre',serif;font-size:16px;font-weight:700;margin-bottom:8px;">If you want capital markets depth</div>
+      <div style="font-size:13px;color:var(--muted);line-height:1.7;">Linklaters or A&O Shearman. Both are elite in debt and equity capital markets in Europe. Linklaters' emerging markets practice (Egypt bond, LatAm DCM) adds a dimension others don't match.</div>
+    </div>
+  </div>
+
+  <div class="newsletter-banner" id="newsletter">
+    <h3>Get the Weekly Digest</h3>
+    <p>Five Magic Circle developments every Friday — written for applicants, not partners.</p>
+    <div class="nl-form">
+      <input type="email" placeholder="your@email.com" id="nlEmail">
+      <button class="nl-btn" onclick="subscribe()">Subscribe Free</button>
+    </div>
+    <p id="nl-msg" style="font-size:12px;color:#aaa;margin-top:12px;display:none;"></p>
+  </div>
+
+</div>
+<div id="footer-shell"></div>
+<script src="site.js"></script>
+<script>
+document.getElementById('shell').innerHTML = SITE.nav('compare');
+document.getElementById('footer-shell').innerHTML = SITE.footer();
+SITE.initDate();
+function subscribe(){const e=document.getElementById('nlEmail').value.trim(),m=document.getElementById('nl-msg');if(!e||!e.includes('@')){m.textContent='Please enter a valid email.';m.style.display='block';return;}m.textContent='✓ Subscribed! First digest lands this Friday.';m.style.color='#7ddb9e';m.style.display='block';document.getElementById('nlEmail').value='';}
+</script>
+</body>
+</html>

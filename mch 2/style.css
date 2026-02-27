@@ -1,0 +1,444 @@
+@import url('https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@400;700;900&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap');
+
+:root {
+  --bg: #f9f8f5;
+  --white: #ffffff;
+  --ink: #111111;
+  --muted: #666666;
+  --faint: #f0ede8;
+  --border: #e2dfd9;
+  --ao:       #00345e;
+  --cc:       #002147;
+  --fresh:    #9e1b1b;
+  --link:     #6b0000;
+  --slaughter:#1b3a1b;
+  --green:    #1a5c1a;
+  --amber:    #b36200;
+  --radius: 0px;
+}
+
+*, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 15px;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+}
+
+a { color: inherit; text-decoration: none; }
+img { display: block; max-width: 100%; }
+button { cursor: pointer; font-family: inherit; }
+
+/* ── TOPBAR ── */
+.topbar {
+  background: var(--ink);
+  color: #aaa;
+  font-size: 11.5px;
+  padding: 7px 0;
+}
+.topbar-inner {
+  max-width: 1180px; margin: 0 auto; padding: 0 24px;
+  display: flex; justify-content: space-between; align-items: center;
+}
+.topbar-right { display: flex; gap: 20px; }
+.topbar-right a { color: #999; transition: color .15s; }
+.topbar-right a:hover { color: #fff; }
+
+/* ── HEADER ── */
+header {
+  background: var(--white);
+  border-bottom: 2px solid var(--ink);
+  position: sticky; top: 0; z-index: 200;
+}
+.header-inner {
+  max-width: 1180px; margin: 0 auto; padding: 0 24px;
+  display: flex; align-items: stretch; justify-content: space-between;
+}
+.logo {
+  font-family: 'Frank Ruhl Libre', serif;
+  font-size: 22px; font-weight: 900;
+  letter-spacing: -0.5px;
+  display: flex; align-items: center;
+  padding: 14px 0;
+  color: var(--ink);
+}
+.logo span { color: var(--fresh); }
+nav { display: flex; align-items: stretch; gap: 0; }
+.nav-link {
+  display: flex; align-items: center;
+  padding: 0 18px;
+  font-size: 13px; font-weight: 500;
+  color: var(--muted);
+  border-bottom: 3px solid transparent;
+  transition: color .15s, border-color .15s;
+  white-space: nowrap;
+}
+.nav-link:hover { color: var(--ink); }
+.nav-link.active { color: var(--ink); border-bottom-color: var(--ink); font-weight: 600; }
+
+/* ── FIRM FILTER TABS ── */
+.firm-tabs {
+  background: var(--white);
+  border-bottom: 1px solid var(--border);
+}
+.firm-tabs-inner {
+  max-width: 1180px; margin: 0 auto; padding: 0 24px;
+  display: flex; overflow-x: auto; scrollbar-width: none;
+}
+.firm-tabs-inner::-webkit-scrollbar { display: none; }
+.firm-tab {
+  padding: 10px 18px;
+  font-size: 13px; font-weight: 500;
+  color: var(--muted);
+  border-bottom: 3px solid transparent;
+  white-space: nowrap; cursor: pointer;
+  transition: all .15s;
+  display: flex; align-items: center; gap: 7px;
+  background: none; border-top: none; border-left: none; border-right: none;
+}
+.firm-tab:hover { color: var(--ink); background: var(--faint); }
+.firm-tab.active { color: var(--ink); font-weight: 600; }
+.firm-tab[data-firm="all"].active    { border-bottom-color: var(--ink); }
+.firm-tab[data-firm="ao"].active     { border-bottom-color: var(--ao); color: var(--ao); }
+.firm-tab[data-firm="cc"].active     { border-bottom-color: var(--cc); color: var(--cc); }
+.firm-tab[data-firm="fresh"].active  { border-bottom-color: var(--fresh); color: var(--fresh); }
+.firm-tab[data-firm="link"].active   { border-bottom-color: var(--link); color: var(--link); }
+.firm-tab[data-firm="slaughter"].active { border-bottom-color: var(--slaughter); color: var(--slaughter); }
+.firm-dot { width:8px; height:8px; border-radius:50%; flex-shrink:0; }
+
+/* ── LAYOUT ── */
+.page { max-width: 1180px; margin: 0 auto; padding: 32px 24px 80px; }
+.two-col { display: grid; grid-template-columns: 1fr 320px; gap: 40px; align-items: start; }
+
+/* ── PAGE TITLE ── */
+.page-title {
+  font-family: 'Frank Ruhl Libre', serif;
+  font-size: 28px; font-weight: 900;
+  margin-bottom: 4px;
+}
+.page-subtitle { font-size: 13.5px; color: var(--muted); margin-bottom: 28px; }
+
+/* ── CARDS ── */
+.card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  transition: box-shadow .15s;
+}
+.card:hover { box-shadow: 0 2px 16px rgba(0,0,0,0.07); }
+
+/* Hero card */
+.hero-card {
+  display: grid; grid-template-columns: 280px 1fr;
+  overflow: hidden; margin-bottom: 16px;
+  border: 1px solid var(--border);
+  background: var(--white);
+  cursor: pointer; transition: box-shadow .15s;
+}
+.hero-card:hover { box-shadow: 0 2px 16px rgba(0,0,0,0.07); }
+.hero-img {
+  min-height: 200px;
+  display: flex; flex-direction: column;
+  justify-content: flex-end; padding: 16px;
+  position: relative; overflow: hidden;
+}
+.hero-img-abbr {
+  position: absolute; inset: 0;
+  display: flex; align-items: center; justify-content: center;
+  font-family: 'Frank Ruhl Libre', serif;
+  font-size: 80px; font-weight: 900;
+  opacity: .08; color: white; user-select: none;
+}
+.firm-badge {
+  position: relative; z-index: 1;
+  background: white; color: var(--ink);
+  font-size: 10px; font-weight: 700;
+  padding: 3px 10px; letter-spacing: 1px;
+  text-transform: uppercase; display: inline-block;
+}
+.hero-body { padding: 24px 28px; display: flex; flex-direction: column; }
+.cat-label {
+  font-size: 10.5px; font-weight: 600;
+  letter-spacing: 2px; text-transform: uppercase;
+  color: var(--muted); margin-bottom: 8px;
+}
+.card-title {
+  font-family: 'Frank Ruhl Libre', serif;
+  font-size: 19px; font-weight: 700;
+  line-height: 1.25; color: var(--ink); margin-bottom: 10px;
+}
+.card-title.large { font-size: 22px; }
+.card-excerpt {
+  font-size: 13.5px; color: var(--muted);
+  line-height: 1.65; margin-bottom: 14px; flex: 1;
+}
+.card-meta {
+  font-size: 11.5px; color: #aaa;
+  display: flex; justify-content: space-between; align-items: center;
+}
+.read-link {
+  font-size: 11.5px; font-weight: 600;
+  color: var(--ink); letter-spacing: .5px;
+  border-bottom: 1.5px solid var(--ink); padding-bottom: 1px;
+}
+
+/* Grid of news cards */
+.news-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 16px; }
+.news-card {
+  background: var(--white); border: 1px solid var(--border);
+  padding: 18px 20px; cursor: pointer;
+  transition: box-shadow .15s; display: flex; flex-direction: column; gap: 8px;
+}
+.news-card:hover { box-shadow: 0 2px 16px rgba(0,0,0,0.07); }
+
+/* Tags */
+.tags { display: flex; gap: 6px; flex-wrap: wrap; }
+.tag {
+  font-size: 10px; font-weight: 600; letter-spacing: 1px;
+  text-transform: uppercase; padding: 2px 8px;
+  border: 1px solid var(--border);
+  background: var(--faint); color: var(--muted);
+}
+.tag.firm { color: #fff; border: none; }
+.tag.ao  { background: var(--ao); }
+.tag.cc  { background: var(--cc); }
+.tag.fresh { background: var(--fresh); }
+.tag.link  { background: var(--link); }
+.tag.slaughter { background: var(--slaughter); }
+
+/* List items */
+.list-item {
+  background: var(--white); border: 1px solid var(--border);
+  padding: 14px 18px; cursor: pointer;
+  display: flex; align-items: center; gap: 14px;
+  transition: background .1s; margin-bottom: 2px;
+}
+.list-item:hover { background: var(--faint); }
+.list-dot { width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; }
+.list-title {
+  font-family: 'Frank Ruhl Libre', serif;
+  font-size: 15px; font-weight: 500; line-height: 1.35; flex: 1;
+}
+.list-date { font-size: 11px; color: #aaa; white-space: nowrap; }
+
+/* Section header */
+.section-head {
+  display: flex; align-items: center; gap: 12px;
+  margin: 28px 0 14px;
+}
+.section-head h2 {
+  font-family: 'Frank Ruhl Libre', serif;
+  font-size: 16px; font-weight: 700; white-space: nowrap;
+}
+.section-head::after { content: ''; flex: 1; height: 1px; background: var(--border); }
+
+/* ── SIDEBAR ── */
+.sidebar { display: flex; flex-direction: column; gap: 20px; }
+.sidebar-card { background: var(--white); border: 1px solid var(--border); overflow: hidden; }
+.sidebar-head {
+  background: var(--ink); color: white;
+  padding: 10px 16px; font-size: 10.5px;
+  font-weight: 700; letter-spacing: 2px; text-transform: uppercase;
+}
+.sidebar-head.ao       { background: var(--ao); }
+.sidebar-head.cc       { background: var(--cc); }
+.sidebar-head.fresh    { background: var(--fresh); }
+.sidebar-head.link     { background: var(--link); }
+.sidebar-head.slaughter{ background: var(--slaughter); }
+.sidebar-head.green    { background: var(--green); }
+.sidebar-head.amber    { background: var(--amber); }
+
+.stat-row {
+  display: flex; justify-content: space-between; align-items: baseline;
+  padding: 9px 16px; border-bottom: 1px solid var(--faint);
+  font-size: 12.5px;
+}
+.stat-row:last-child { border-bottom: none; }
+.stat-label { color: var(--muted); }
+.stat-value { font-weight: 600; }
+
+.sidebar-links { display: flex; flex-direction: column; }
+.sidebar-link {
+  padding: 11px 16px; font-size: 13px;
+  border-bottom: 1px solid var(--faint); cursor: pointer;
+  display: flex; justify-content: space-between; align-items: center;
+  transition: background .1s; color: var(--ink);
+}
+.sidebar-link:hover { background: var(--faint); }
+.sidebar-link:last-child { border-bottom: none; }
+.s-arrow { color: var(--muted); font-size: 12px; }
+
+/* Deadline item */
+.deadline-item {
+  display: flex; gap: 14px; align-items: flex-start;
+  padding: 12px 16px; border-bottom: 1px solid var(--faint);
+}
+.deadline-item:last-child { border-bottom: none; }
+.deadline-date {
+  background: var(--faint); border: 1px solid var(--border);
+  text-align: center; padding: 5px 8px; min-width: 48px; flex-shrink: 0;
+}
+.dl-month { font-size: 9px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: var(--muted); }
+.dl-day { font-size: 20px; font-weight: 700; font-family: 'Frank Ruhl Libre', serif; line-height: 1; }
+.dl-firm { font-size: 10.5px; font-weight: 600; color: var(--muted); margin-top: 2px; }
+.dl-text { font-size: 12.5px; line-height: 1.45; }
+
+/* ── FILTER CHIPS ── */
+.filter-bar { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 20px; }
+.chip {
+  padding: 5px 14px; font-size: 12px; font-weight: 500;
+  border: 1.5px solid var(--border); background: transparent;
+  color: var(--muted); transition: all .12s;
+}
+.chip:hover { border-color: var(--ink); color: var(--ink); }
+.chip.active { background: var(--ink); color: white; border-color: var(--ink); }
+
+/* ── FIRM PROFILE PAGE ── */
+.firm-profile-header {
+  padding: 32px; margin-bottom: 24px;
+  display: grid; grid-template-columns: 1fr auto; gap: 24px; align-items: center;
+}
+.firm-name {
+  font-family: 'Frank Ruhl Libre', serif;
+  font-size: 36px; font-weight: 900; color: white;
+}
+.firm-hq { font-size: 13px; color: rgba(255,255,255,.7); margin-top: 4px; }
+.firm-stat-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-bottom: 24px; }
+.firm-stat-card { background: var(--white); border: 1px solid var(--border); padding: 16px 20px; }
+.fsn { font-family: 'Frank Ruhl Libre', serif; font-size: 26px; font-weight: 900; }
+.fsl { font-size: 11px; color: var(--muted); letter-spacing: .5px; margin-top: 2px; }
+
+/* ── COMPARE TABLE ── */
+.compare-table { width: 100%; border-collapse: collapse; background: var(--white); }
+.compare-table th {
+  background: var(--ink); color: white;
+  padding: 12px 16px; font-size: 12px;
+  font-weight: 600; text-align: left; letter-spacing: .5px;
+}
+.compare-table th:first-child { background: #222; }
+.compare-table td {
+  padding: 11px 16px; font-size: 13px;
+  border-bottom: 1px solid var(--border); vertical-align: top;
+}
+.compare-table tr:last-child td { border-bottom: none; }
+.compare-table tr:hover td { background: var(--faint); }
+.compare-table td:first-child { font-weight: 600; color: var(--muted); font-size: 11.5px; letter-spacing: .3px; }
+.ao-col  { border-top: 3px solid var(--ao); }
+.cc-col  { border-top: 3px solid var(--cc); }
+.fr-col  { border-top: 3px solid var(--fresh); }
+.lk-col  { border-top: 3px solid var(--link); }
+.sl-col  { border-top: 3px solid var(--slaughter); }
+
+/* ── INTERVIEW INTEL ── */
+.intel-card { background: var(--white); border: 1px solid var(--border); margin-bottom: 12px; overflow: hidden; }
+.intel-head {
+  padding: 14px 20px; display: flex; justify-content: space-between;
+  align-items: center; cursor: pointer; transition: background .1s;
+}
+.intel-head:hover { background: var(--faint); }
+.intel-q { font-family: 'Frank Ruhl Libre', serif; font-size: 16px; font-weight: 600; flex: 1; padding-right: 16px; }
+.intel-toggle { font-size: 18px; color: var(--muted); user-select: none; transition: transform .2s; }
+.intel-body {
+  padding: 0 20px; max-height: 0;
+  overflow: hidden; transition: max-height .3s ease, padding .3s ease;
+}
+.intel-body.open { max-height: 400px; padding: 0 20px 20px; }
+.intel-answer { font-size: 13.5px; color: var(--muted); line-height: 1.7; }
+.intel-tip {
+  margin-top: 12px; padding: 10px 14px;
+  background: var(--faint); border-left: 3px solid var(--ink);
+  font-size: 12.5px; line-height: 1.6;
+}
+.intel-tip strong { color: var(--ink); }
+
+/* ── NEWSLETTER BANNER ── */
+.newsletter-banner {
+  background: var(--ink); color: white;
+  padding: 32px; margin: 32px 0; text-align: center;
+}
+.newsletter-banner h3 {
+  font-family: 'Frank Ruhl Libre', serif;
+  font-size: 22px; font-weight: 700; margin-bottom: 6px;
+}
+.newsletter-banner p { font-size: 13.5px; color: #aaa; margin-bottom: 20px; }
+.nl-form { display: flex; gap: 8px; max-width: 420px; margin: 0 auto; }
+.nl-form input {
+  flex: 1; padding: 10px 14px;
+  background: #222; border: 1px solid #444;
+  color: white; font-family: inherit; font-size: 13.5px; outline: none;
+}
+.nl-form input::placeholder { color: #666; }
+.nl-form input:focus { border-color: #888; }
+.nl-btn {
+  padding: 10px 20px; background: white; color: var(--ink);
+  border: none; font-weight: 600; font-size: 13px;
+  letter-spacing: .3px; white-space: nowrap; transition: background .15s;
+}
+.nl-btn:hover { background: #ddd; }
+
+/* ── FOOTER ── */
+footer { background: var(--ink); color: #777; padding: 40px 0 20px; margin-top: 60px; }
+.footer-inner {
+  max-width: 1180px; margin: 0 auto; padding: 0 24px;
+  display: grid; grid-template-columns: 1.5fr 1fr 1fr 1fr; gap: 32px;
+}
+.footer-logo {
+  font-family: 'Frank Ruhl Libre', serif;
+  font-size: 20px; font-weight: 900; color: white;
+  margin-bottom: 10px;
+}
+.footer-desc { font-size: 12px; line-height: 1.7; }
+.footer-col h4 { color: white; font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 14px; }
+.footer-col a { display: block; font-size: 12.5px; padding: 3px 0; color: #777; transition: color .15s; }
+.footer-col a:hover { color: white; }
+.footer-bottom {
+  max-width: 1180px; margin: 24px auto 0; padding: 20px 24px 0;
+  border-top: 1px solid #222; font-size: 11.5px;
+  display: flex; justify-content: space-between;
+}
+
+/* ── BREAKING ── */
+.breaking {
+  background: var(--fresh); color: white;
+  padding: 9px 16px; font-size: 13px;
+  display: flex; align-items: center; gap: 10px; margin-bottom: 20px;
+}
+.breaking-label {
+  background: white; color: var(--fresh);
+  font-size: 9.5px; font-weight: 800; padding: 2px 8px;
+  letter-spacing: 1.5px; flex-shrink: 0;
+}
+
+/* ── HIDDEN / SHOW ── */
+.page-section { display: none; }
+.page-section.active { display: block; }
+
+/* ── RESPONSIVE ── */
+@media (max-width: 900px) {
+  .two-col { grid-template-columns: 1fr; }
+  .hero-card { grid-template-columns: 1fr; }
+  .hero-img { min-height: 140px; }
+  .news-grid { grid-template-columns: 1fr; }
+  .firm-stat-grid { grid-template-columns: 1fr 1fr; }
+  .footer-inner { grid-template-columns: 1fr 1fr; }
+  nav { display: none; }
+  .mobile-menu-btn { display: flex; }
+}
+@media (max-width: 600px) {
+  .footer-inner { grid-template-columns: 1fr; }
+  .nl-form { flex-direction: column; }
+  .firm-stat-grid { grid-template-columns: 1fr; }
+}
+
+/* ── ANIMATIONS ── */
+@keyframes fadeUp { from { opacity:0; transform:translateY(12px); } to { opacity:1; transform:translateY(0); } }
+.fade-up { animation: fadeUp .4s ease forwards; }
+.fade-up-2 { animation: fadeUp .4s .08s ease forwards; opacity:0; }
+.fade-up-3 { animation: fadeUp .4s .16s ease forwards; opacity:0; }
+
+/* Active nav highlight helper */
+.hidden { display: none !important; }

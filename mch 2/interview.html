@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Interview Intel — MagicCircleHub</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="shell"></div>
+<div class="page">
+
+  <div class="page-title">Interview Intel</div>
+  <div class="page-subtitle">Real TC interview questions by firm, with guidance on what interviewers are actually looking for — and suggested answer frameworks.</div>
+
+  <div class="filter-bar" style="margin-top:20px;" id="firmFilter">
+    <button class="chip active" onclick="filterInterview('all',this)">All Firms</button>
+    <button class="chip" onclick="filterInterview('ao',this)">A&O Shearman</button>
+    <button class="chip" onclick="filterInterview('cc',this)">Clifford Chance</button>
+    <button class="chip" onclick="filterInterview('fresh',this)">Freshfields</button>
+    <button class="chip" onclick="filterInterview('link',this)">Linklaters</button>
+    <button class="chip" onclick="filterInterview('slaughter',this)">Slaughter and May</button>
+  </div>
+
+  <!-- UNIVERSAL QUESTIONS -->
+  <div class="section-head intel-group" data-firm="all"><h2>Universal Magic Circle Questions</h2></div>
+  <div class="intel-group" data-firm="all">
+
+    <div class="intel-card">
+      <div class="intel-head" onclick="toggleIntel(this)">
+        <div class="intel-q">"Why do you want to be a commercial solicitor?"</div>
+        <div class="intel-toggle">+</div>
+      </div>
+      <div class="intel-body">
+        <div class="intel-answer">This is almost universally asked first. Interviewers are testing whether you understand what a Magic Circle commercial solicitor actually does — and that your motivation is genuine, not just prestige-seeking.</div>
+        <div class="intel-tip"><strong>Framework:</strong> (1) What drew you to commercial law specifically over other legal paths — link to a genuine experience. (2) Why this type of work excites you — tie it to a specific deal type, practice area or client problem you find intellectually interesting. (3) Why now — how has your journey so far built toward this?<br><br>Avoid: "I want to work on big deals and earn good money." This is what 80% of candidates say and it immediately signals you haven't thought deeply enough.</div>
+      </div>
+    </div>
+
+    <div class="intel-card">
+      <div class="intel-head" onclick="toggleIntel(this)">
+        <div class="intel-q">"Tell me about a recent commercial deal that interested you."</div>
+        <div class="intel-toggle">+</div>
+      </div>
+      <div class="intel-body">
+        <div class="intel-answer">The most common competency question at Magic Circle assessment centres. Interviewers want to see: (a) genuine commercial awareness, (b) that you read and track business/legal news, (c) your ability to explain complex things clearly.</div>
+        <div class="intel-tip"><strong>Framework:</strong> Pick a deal from the last 3–6 months that genuinely interests you. Structure your answer as: (1) What the deal was — parties, size, structure in 2 sentences. (2) Why it's significant commercially or legally — the bigger picture. (3) What legal issues it raised — e.g. regulatory clearance, deal structure, jurisdiction complexity. (4) Why it interests YOU specifically — link to the firm or practice area you're applying for.<br><br>Tip: Use a deal the firm you're interviewing at actually worked on. It shows research and flatters the interviewer — but only if you know the details.</div>
+      </div>
+    </div>
+
+    <div class="intel-card">
+      <div class="intel-head" onclick="toggleIntel(this)">
+        <div class="intel-q">"What skills does a trainee need to succeed at a Magic Circle firm?"</div>
+        <div class="intel-toggle">+</div>
+      </div>
+      <div class="intel-body">
+        <div class="intel-answer">Tests self-awareness and whether you understand the reality of trainee life, not just the prestige. Don't just list generic "attention to detail, communication" — they've heard it a thousand times.</div>
+        <div class="intel-tip"><strong>Framework:</strong> Be specific and show you've thought about it. Strong answers typically include: (1) Analytical rigour — ability to process large volumes of complex information quickly. (2) Commercial judgement — understanding what matters to the client beyond the legal technicalities. (3) Resilience and adaptability — long hours, changing priorities, working with different teams on different matters simultaneously. (4) Communication under pressure — being clear and concise when you're being asked something you don't immediately know the answer to.<br><br>Then tie one of these to a specific example from your own experience.</div>
+      </div>
+    </div>
+
+    <div class="intel-card">
+      <div class="intel-head" onclick="toggleIntel(this)">
+        <div class="intel-q">"Give me an example of a time you worked under significant pressure."</div>
+        <div class="intel-toggle">+</div>
+      </div>
+      <div class="intel-body">
+        <div class="intel-answer">Standard competency question. Use the STAR method but don't robotically label the steps — let it flow naturally.</div>
+        <div class="intel-tip"><strong>Framework (STAR):</strong> Situation (brief — 1-2 sentences), Task (what you needed to achieve), Action (what YOU specifically did — not "we"), Result (concrete outcome, not vague).<br><br>The best examples involve a genuine trade-off or difficulty — not just "I had a lot to do and I did it all." What decision did you make? What did you sacrifice? What did you learn?</div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- A&O -->
+  <div class="section-head intel-group" data-firm="ao"><h2 style="display:flex;align-items:center;gap:8px;"><span style="width:10px;height:10px;border-radius:50%;background:var(--ao);display:inline-block;"></span>A&O Shearman Specific</h2></div>
+  <div class="intel-group" data-firm="ao">
+
+    <div class="intel-card">
+      <div class="intel-head" onclick="toggleIntel(this)">
+        <div class="intel-q">"What do you know about the Allen & Overy and Shearman & Sterling merger, and what do you think the key challenges are?"</div>
+        <div class="intel-toggle">+</div>
+      </div>
+      <div class="intel-body">
+        <div class="intel-answer">Almost certain to be asked at A&O Shearman. The merger is the defining story of the firm right now and they want to know you understand it — both the opportunity and the complexity.</div>
+        <div class="intel-tip"><strong>Key points to cover:</strong> (1) Background — the 2023 merger creating the largest ever law firm combination. A&O's London/European strength combined with Shearman's US M&A and capital markets expertise. (2) Strategic rationale — genuine transatlantic capability, ability to advise on the largest US-European M&A transactions end-to-end without referring to another firm. (3) Challenges — cultural integration (British vs. American firm culture, lockstep vs. eat-what-you-kill), office overlap rationalisation, client conflicts, technology/systems integration. (4) Why it matters for trainees — potentially the most diverse set of seats and international secondment opportunities in the Magic Circle, but some uncertainty during the integration phase.<br><br>Show you've thought critically, not just positively.</div>
+      </div>
+    </div>
+
+    <div class="intel-card">
+      <div class="intel-head" onclick="toggleIntel(this)">
+        <div class="intel-q">"Why A&O Shearman over the other Magic Circle firms?"</div>
+        <div class="intel-toggle">+</div>
+      </div>
+      <div class="intel-body">
+        <div class="intel-answer">The classic differentiator question. You must know what genuinely sets A&O Shearman apart — and it has to be specific, not generic "global presence" language.</div>
+        <div class="intel-tip"><strong>Strong angles:</strong> (1) The post-merger US capability — if you want transatlantic M&A or leveraged finance work, no MC firm now matches the combined New York + London bench. (2) The banking & finance practice is arguably the deepest in the MC globally — if that's your area of interest, this is compelling. (3) The scale of the combined firm means exposure to a broader range of sectors and transaction types. (4) The Middle East strategy — significant growth in Riyadh and Abu Dhabi if that region interests you.<br><br>Always tie it back to a practice area or type of work you're genuinely interested in. "I want to work on cross-border leveraged finance deals and your combined New York/London team is uniquely positioned for that" is much stronger than any generic answer.</div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- CLIFFORD CHANCE -->
+  <div class="section-head intel-group" data-firm="cc"><h2 style="display:flex;align-items:center;gap:8px;"><span style="width:10px;height:10px;border-radius:50%;background:var(--cc);display:inline-block;"></span>Clifford Chance Specific</h2></div>
+  <div class="intel-group" data-firm="cc">
+
+    <div class="intel-card">
+      <div class="intel-head" onclick="toggleIntel(this)">
+        <div class="intel-q">"How does Clifford Chance differ from the other Magic Circle firms?"</div>
+        <div class="intel-toggle">+</div>
+      </div>
+      <div class="intel-body">
+        <div class="intel-answer">CC wants to know you've done genuine research and can articulate a thoughtful distinction — not just repeat their marketing materials back at them.</div>
+        <div class="intel-tip"><strong>Strong angles:</strong> (1) Genuinely global — CC has real offices in more markets than any other MC firm. Not just London with satellites, but genuine practices in Singapore, Tokyo, Seoul, NYC, Middle East, LATAM. (2) Fintech and digital assets — CC Advance and their crypto/digital assets team is unique in the MC. (3) Private equity expansion — aggressive US PE growth at a time when others are more cautious. (4) The culture tends to be described as the most "international" and "open" of the five — useful if you mention international secondments as important to you.</div>
+      </div>
+    </div>
+
+    <div class="intel-card">
+      <div class="intel-head" onclick="toggleIntel(this)">
+        <div class="intel-q">"Tell me about a regulation or legal development that interests you and its commercial impact."</div>
+        <div class="intel-toggle">+</div>
+      </div>
+      <div class="intel-body">
+        <div class="intel-answer">CC has a particularly strong financial regulation practice — this question tests both commercial awareness and whether you're interested in regulation (not just "deals").</div>
+        <div class="intel-tip"><strong>Good current topics:</strong> (1) EU AI Act — the world's first comprehensive AI regulation and its implications for tech M&A and compliance obligations. (2) Digital assets regulation — MiCA in Europe, SEC enforcement in the US, and what it means for crypto firms. (3) CFIUS/FDI screening — the expansion of foreign investment review and its impact on cross-border M&A timelines. (4) Basel IV capital requirements — implications for bank lending and structured finance.<br><br>Pick one, explain the regulation clearly, then explain the commercial impact — who wins, who loses, what deals it's making harder or easier.</div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- FRESHFIELDS -->
+  <div class="section-head intel-group" data-firm="fresh"><h2 style="display:flex;align-items:center;gap:8px;"><span style="width:10px;height:10px;border-radius:50%;background:var(--fresh);display:inline-block;"></span>Freshfields Specific</h2></div>
+  <div class="intel-group" data-firm="fresh">
+
+    <div class="intel-card">
+      <div class="intel-head" onclick="toggleIntel(this)">
+        <div class="intel-q">"Freshfields has invested heavily in the US. Do you think that was the right strategy?"</div>
+        <div class="intel-toggle">+</div>
+      </div>
+      <div class="intel-body">
+        <div class="intel-answer">Freshfields loves this type of analytical question — they want to see you think independently and critically, not just agree with whatever they've done. It's fine to challenge the strategy respectfully.</div>
+        <div class="intel-tip"><strong>Framework:</strong> Present both sides. FOR: The 2025 record revenue figures suggest the strategy is working; cracking the global top five M&A advisers by deal value validates the investment; the US PE market is the largest and most lucrative in the world. AGAINST: The investment came at a cost to other geographies; there's a risk of cultural dilution; the firm is now more dependent on M&A deal flow cycles which are volatile.<br><br>Then give your view — and defend it. Freshfields interviewers respect a candidate who takes a position and backs it up more than one who sits on the fence.</div>
+      </div>
+    </div>
+
+    <div class="intel-card">
+      <div class="intel-head" onclick="toggleIntel(this)">
+        <div class="intel-q">"Walk me through a hostile takeover bid — what are the key legal steps?"</div>
+        <div class="intel-toggle">+</div>
+      </div>
+      <div class="intel-body">
+        <div class="intel-answer">Freshfields is known for hostile M&A — more than any other MC firm. This technical question appears regularly at interview and tests whether you've genuinely engaged with how deals work.</div>
+        <div class="intel-tip"><strong>Key steps:</strong> (1) Bidder announces intention to make an offer — triggers Takeover Code obligations (public announcement, offer document timetable). (2) Offer document dispatched to target shareholders — contains terms, financial information, strategic rationale. (3) Target board response — required to advise shareholders; often recommends rejection. (4) Competing bids / white knight scenarios — other potential acquirers may emerge. (5) Regulatory clearances — competition review (CMA, EU Commission), foreign investment screening (CFIUS if US assets). (6) Acceptances and closing — once over 50% acceptances, bidder can proceed; over 90% allows compulsory acquisition of remaining shares (squeeze-out).<br><br>You don't need to know every detail — showing the structure and the key legal pressure points is what impresses.</div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- LINKLATERS -->
+  <div class="section-head intel-group" data-firm="link"><h2 style="display:flex;align-items:center;gap:8px;"><span style="width:10px;height:10px;border-radius:50%;background:var(--link);display:inline-block;"></span>Linklaters Specific</h2></div>
+  <div class="intel-group" data-firm="link">
+
+    <div class="intel-card">
+      <div class="intel-head" onclick="toggleIntel(this)">
+        <div class="intel-q">"Why are you interested in capital markets work?"</div>
+        <div class="intel-toggle">+</div>
+      </div>
+      <div class="intel-body">
+        <div class="intel-answer">Linklaters is elite in debt capital markets — this question will come up if you've expressed interest in DCM, ECM or bonds work. It tests genuine interest vs. generic application.</div>
+        <div class="intel-tip"><strong>Strong answer elements:</strong> (1) Show you understand what capital markets lawyers actually do — they help companies and governments raise money by issuing debt or equity in the public markets. It's documentation-heavy, time-pressured, and highly structured. (2) Reference a recent transaction — the Egypt $2B sovereign bond is a perfect Linklaters example: explain what it was, why it mattered (Egypt returning to markets after a two-year absence), and what the legal work involved (prospectus drafting, investor representation, conditions precedent). (3) Link to your own experience or interests — have you followed bond markets? Studied a relevant module? Done work experience that touched on capital raising?</div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- SLAUGHTER AND MAY -->
+  <div class="section-head intel-group" data-firm="slaughter"><h2 style="display:flex;align-items:center;gap:8px;"><span style="width:10px;height:10px;border-radius:50%;background:var(--slaughter);display:inline-block;"></span>Slaughter and May Specific</h2></div>
+  <div class="intel-group" data-firm="slaughter">
+
+    <div class="intel-card">
+      <div class="intel-head" onclick="toggleIntel(this)">
+        <div class="intel-q">"Slaughter and May has chosen not to expand globally the way other Magic Circle firms have. Do you think that's the right approach?"</div>
+        <div class="intel-toggle">+</div>
+      </div>
+      <div class="intel-body">
+        <div class="intel-answer">Almost certain to come up at Slaughter and May. They're proud of their model and want to know you understand it deeply — and that you've made a genuine choice to apply here, not as a backup.</div>
+        <div class="intel-tip"><strong>Key arguments FOR the model:</strong> (1) Deep specialism in UK law — when a FTSE 100 board needs advice on the most sensitive UK corporate governance issue, Slaughter is the first call. (2) Quality over quantity — ~500 lawyers means every matter is high-stakes; trainees don't get lost. (3) The "best friend" network (Bredin Prat in France, Hengeler Mueller in Germany, etc.) means clients still get best-in-class local advice without the overhead of running 30 offices. (4) Culture — no billing targets, no office politics about who controls which client, strong collegiality.<br><br>AGAINST (show you can think critically): May miss out on some cross-border mandates that require a single firm globally; harder to grow revenue; talent acquisition more difficult when US firms offer 40% more pay.<br><br>Conclude with your own view — they respect people who have genuine reasons for choosing Slaughter, not people who "couldn't get into the others."</div>
+      </div>
+    </div>
+
+    <div class="intel-card">
+      <div class="intel-head" onclick="toggleIntel(this)">
+        <div class="intel-q">"What does the 'best friend' network mean in practice for a client?"</div>
+        <div class="intel-toggle">+</div>
+      </div>
+      <div class="intel-body">
+        <div class="intel-answer">If you've researched Slaughter properly you'll know this — and it immediately distinguishes you from candidates who haven't.</div>
+        <div class="intel-tip"><strong>Answer:</strong> Rather than opening offices in every jurisdiction, Slaughter and May works with a select group of independently top-ranked law firms in key markets — including Bredin Prat (France), Hengeler Mueller (Germany), Bonelli Erede (Italy), Nagashima Ohno & Tsunematsu (Japan), and others.<br><br>In practice, this means: when a client needs cross-border advice, Slaughter coordinates the overall transaction from London while the "best friend" firm handles local law in their jurisdiction. The client gets the best lawyer in each country — not a Slaughter satellite office that may be less established — all coordinated by one relationship partner in London. This model is genuinely differentiated and explains why blue-chip clients choose Slaughter despite its smaller size.</div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="newsletter-banner" id="newsletter" style="margin-top:32px;">
+    <h3>New Questions Added Weekly</h3>
+    <p>We add new interview questions and answer frameworks every week based on recent TC rounds — subscribe to get them first.</p>
+    <div class="nl-form">
+      <input type="email" placeholder="your@email.com" id="nlEmail">
+      <button class="nl-btn" onclick="subscribe()">Subscribe Free</button>
+    </div>
+    <p id="nl-msg" style="font-size:12px;color:#aaa;margin-top:12px;display:none;"></p>
+  </div>
+
+</div>
+<div id="footer-shell"></div>
+<script src="site.js"></script>
+<script>
+document.getElementById('shell').innerHTML = SITE.nav('interview');
+document.getElementById('footer-shell').innerHTML = SITE.footer();
+SITE.initDate();
+
+function toggleIntel(head) {
+  const body = head.nextElementSibling;
+  const toggle = head.querySelector('.intel-toggle');
+  const isOpen = body.classList.contains('open');
+  body.classList.toggle('open');
+  toggle.textContent = isOpen ? '+' : '−';
+  toggle.style.transform = isOpen ? 'rotate(0deg)' : 'rotate(0deg)';
+}
+
+function filterInterview(firm, btn) {
+  document.querySelectorAll('.chip').forEach(c => c.classList.remove('active'));
+  btn.classList.add('active');
+  document.querySelectorAll('.intel-group').forEach(g => {
+    const gf = g.dataset.firm;
+    g.style.display = (firm === 'all' || gf === firm || gf === 'all') ? '' : 'none';
+  });
+}
+
+function subscribe(){const e=document.getElementById('nlEmail').value.trim(),m=document.getElementById('nl-msg');if(!e||!e.includes('@')){m.textContent='Please enter a valid email.';m.style.display='block';return;}m.textContent='✓ Subscribed!';m.style.color='#7ddb9e';m.style.display='block';document.getElementById('nlEmail').value='';}
+</script>
+</body>
+</html>

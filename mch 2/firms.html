@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Firm Profiles — MagicCircleHub</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="shell"></div>
+
+<div class="page">
+  <div style="margin-bottom:24px;">
+    <div class="page-title">Firm Profiles</div>
+    <div class="page-subtitle">Everything you need to write a compelling "Why This Firm" answer — updated regularly.</div>
+    <!-- Firm selector tabs -->
+    <div class="filter-bar">
+      <button class="chip active" onclick="showFirm('ao',this)">A&O Shearman</button>
+      <button class="chip" onclick="showFirm('cc',this)">Clifford Chance</button>
+      <button class="chip" onclick="showFirm('fresh',this)">Freshfields</button>
+      <button class="chip" onclick="showFirm('link',this)">Linklaters</button>
+      <button class="chip" onclick="showFirm('slaughter',this)">Slaughter and May</button>
+    </div>
+  </div>
+
+  <!-- ── A&O SHEARMAN ── -->
+  <div id="firm-ao" class="page-section active">
+    <div class="firm-profile-header card" style="background:var(--ao);">
+      <div>
+        <div class="firm-name">A&O Shearman</div>
+        <div class="firm-hq">London · New York · Global — ~3,900 lawyers</div>
+      </div>
+      <div style="text-align:right;">
+        <div style="font-size:11px;color:rgba(255,255,255,.6);letter-spacing:1px;text-transform:uppercase;margin-bottom:4px;">NQ Salary</div>
+        <div style="font-family:'Frank Ruhl Libre',serif;font-size:28px;font-weight:900;color:white;">£150,000</div>
+      </div>
+    </div>
+
+    <div class="firm-stat-grid">
+      <div class="firm-stat-card"><div class="fsn">~3,900</div><div class="fsl">Lawyers globally</div></div>
+      <div class="firm-stat-card"><div class="fsn">40+</div><div class="fsl">Offices worldwide</div></div>
+      <div class="firm-stat-card"><div class="fsn">2023</div><div class="fsl">Allen & Overy + Shearman merger</div></div>
+    </div>
+
+    <div class="two-col">
+      <div>
+        <div class="section-head"><h2>What They're Known For Right Now</h2></div>
+        <div class="card" style="padding:20px 24px;margin-bottom:12px;">
+          <p style="font-size:14px;line-height:1.75;color:#333;margin-bottom:14px;">A&O Shearman is the largest Magic Circle firm by headcount following its transformative 2023 merger with US firm Shearman & Sterling. The merger was the biggest in legal history and created a genuinely transatlantic powerhouse — but integration remains ongoing and is a key story to follow.</p>
+          <p style="font-size:14px;line-height:1.75;color:#333;margin-bottom:14px;">Their strongest practices right now are <strong>banking & finance, capital markets</strong> and <strong>M&A</strong>. They are particularly dominant in leveraged finance and high-yield debt in Europe. The firm is also a top-three player in financial regulatory work globally.</p>
+          <p style="font-size:14px;line-height:1.75;color:#333;">Post-merger, the combined firm has significant overlap in offices and practices — some rationalisation is expected over 2026. This is something to be aware of and shows you're thinking critically if you mention it in an application.</p>
+        </div>
+
+        <div class="section-head"><h2>Strategic Direction 2025–26</h2></div>
+        <div class="card" style="padding:20px 24px;margin-bottom:12px;">
+          <ul style="font-size:14px;line-height:2;padding-left:18px;color:#333;">
+            <li>Doubling down on US private equity and M&A mandate flow post-Shearman merger</li>
+            <li>Building out the Middle East — significant Riyadh and Abu Dhabi growth</li>
+            <li>Targeting the sovereign wealth fund market (ADIA, PIF, QIA) as a strategic client segment</li>
+            <li>Technology and AI practice is expanding significantly — over 100 tech-sector mandates in 2025</li>
+          </ul>
+        </div>
+
+        <div class="section-head"><h2>Culture & Trainee Life</h2></div>
+        <div class="card" style="padding:20px 24px;margin-bottom:12px;">
+          <p style="font-size:14px;line-height:1.75;color:#333;margin-bottom:10px;">Trainees describe A&O Shearman as <em>"ambitious and a little intense post-merger"</em> — the culture is more formal than Linklaters or Freshfields, but there's a genuine meritocracy feel. International secondments are a major draw — nearly all trainees do at least one overseas seat.</p>
+          <p style="font-size:14px;line-height:1.75;color:#333;">The trainee intake is one of the largest in the Magic Circle (~120 per year). Some trainees note the firm still feels like two cultures merging — which creates opportunity for those who are adaptable.</p>
+        </div>
+
+        <div class="section-head"><h2>Recent Deals to Reference</h2></div>
+        <div class="list-item" style="margin-bottom:2px;"><span class="list-dot" style="background:var(--ao)"></span><span class="list-title">€2.4B European infrastructure bond issuance — Q1 2026</span></div>
+        <div class="list-item" style="margin-bottom:2px;"><span class="list-dot" style="background:var(--ao)"></span><span class="list-title">Advised on major Gulf sovereign wealth fund restructuring — 2025</span></div>
+        <div class="list-item" style="margin-bottom:2px;"><span class="list-dot" style="background:var(--ao)"></span><span class="list-title">Lead counsel on landmark EMEA leveraged buyout financing — 2025</span></div>
+      </div>
+
+      <div class="sidebar">
+        <div class="sidebar-card">
+          <div class="sidebar-head ao">Key Numbers</div>
+          <div class="stat-row"><span class="stat-label">First-year trainee salary</span><span class="stat-value">£56,000</span></div>
+          <div class="stat-row"><span class="stat-label">Second-year trainee</span><span class="stat-value">£61,000</span></div>
+          <div class="stat-row"><span class="stat-label">NQ salary</span><span class="stat-value">£150,000</span></div>
+          <div class="stat-row"><span class="stat-label">Trainee intake/year</span><span class="stat-value">~120</span></div>
+          <div class="stat-row"><span class="stat-label">Training seats</span><span class="stat-value">4 × 6 months</span></div>
+          <div class="stat-row"><span class="stat-label">TC application deadline</span><span class="stat-value">Apr 2026</span></div>
+        </div>
+        <div class="sidebar-card">
+          <div class="sidebar-head ao">Why This Firm — Tips</div>
+          <div style="padding:14px 16px;font-size:12.5px;line-height:1.75;color:#555;">
+            <p style="margin-bottom:8px;"><strong>DO mention:</strong> the transformative merger and what it means for cross-border M&A capability; Middle East strategic growth; the finance practice depth.</p>
+            <p><strong>AVOID:</strong> Generic "full service global firm" language. Show you've thought about the integration story and what it means for practice areas you're interested in.</p>
+          </div>
+        </div>
+        <div class="sidebar-card">
+          <div class="sidebar-head">Apply</div>
+          <div class="sidebar-links">
+            <a href="https://www.aoshearman.com/en/careers" target="_blank" class="sidebar-link">Graduate Recruitment <span class="s-arrow">↗</span></a>
+            <a href="deadlines.html" class="sidebar-link">TC Deadlines <span class="s-arrow">→</span></a>
+            <a href="interview.html" class="sidebar-link">Interview Questions <span class="s-arrow">→</span></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── CLIFFORD CHANCE ── -->
+  <div id="firm-cc" class="page-section">
+    <div class="firm-profile-header card" style="background:var(--cc);">
+      <div>
+        <div class="firm-name">Clifford Chance</div>
+        <div class="firm-hq">London · New York · Global — ~6,500 lawyers</div>
+      </div>
+      <div style="text-align:right;">
+        <div style="font-size:11px;color:rgba(255,255,255,.6);letter-spacing:1px;text-transform:uppercase;margin-bottom:4px;">NQ Salary</div>
+        <div style="font-family:'Frank Ruhl Libre',serif;font-size:28px;font-weight:900;color:white;">£150,000</div>
+      </div>
+    </div>
+    <div class="firm-stat-grid">
+      <div class="firm-stat-card"><div class="fsn">~6,500</div><div class="fsl">Lawyers globally</div></div>
+      <div class="firm-stat-card"><div class="fsn">30+</div><div class="fsl">Offices worldwide</div></div>
+      <div class="firm-stat-card"><div class="fsn">31</div><div class="fsl">New partners in 2025</div></div>
+    </div>
+    <div class="two-col">
+      <div>
+        <div class="section-head"><h2>What They're Known For Right Now</h2></div>
+        <div class="card" style="padding:20px 24px;margin-bottom:12px;">
+          <p style="font-size:14px;line-height:1.75;color:#333;margin-bottom:12px;">Clifford Chance is the most globally diversified of the Magic Circle — genuinely present in major markets rather than being London-centric with outposts. Their strongest current practices are <strong>capital markets, private equity and dispute resolution</strong>.</p>
+          <p style="font-size:14px;line-height:1.75;color:#333;">CC has a strong reputation in financial regulatory work and is a go-to firm for complex cross-border M&A involving multiple jurisdictions. Their New York office is growing rapidly — the 2026 PE partner hire from Freshfields signals ambition in the US PE market.</p>
+        </div>
+        <div class="section-head"><h2>Strategic Direction 2025–26</h2></div>
+        <div class="card" style="padding:20px 24px;margin-bottom:12px;">
+          <ul style="font-size:14px;line-height:2;padding-left:18px;color:#333;">
+            <li>Aggressive US market expansion in private equity — rare for a Magic Circle firm</li>
+            <li>Saudi Arabia and UAE office growth — major regional law reform creating deal flow</li>
+            <li>Fintech and digital assets practice growing — one of the first MC firms with a dedicated crypto team</li>
+            <li>Launched CC Advance (legal tech / AI arm) — positioning as a forward-thinking firm</li>
+          </ul>
+        </div>
+        <div class="section-head"><h2>Recent Deals to Reference</h2></div>
+        <div class="list-item" style="margin-bottom:2px;"><span class="list-dot" style="background:var(--cc)"></span><span class="list-title">Advised Saudi Aramco on downstream financing facilities — 2025</span></div>
+        <div class="list-item" style="margin-bottom:2px;"><span class="list-dot" style="background:var(--cc)"></span><span class="list-title">14 new counsel appointed across Middle East offices — Dec 2025</span></div>
+        <div class="list-item" style="margin-bottom:2px;"><span class="list-dot" style="background:var(--cc)"></span><span class="list-title">Senior PE partner hire from Freshfields for NY expansion — Jan 2026</span></div>
+      </div>
+      <div class="sidebar">
+        <div class="sidebar-card">
+          <div class="sidebar-head cc">Key Numbers</div>
+          <div class="stat-row"><span class="stat-label">First-year trainee</span><span class="stat-value">£56,000</span></div>
+          <div class="stat-row"><span class="stat-label">Second-year trainee</span><span class="stat-value">£61,000</span></div>
+          <div class="stat-row"><span class="stat-label">NQ salary</span><span class="stat-value">£150,000</span></div>
+          <div class="stat-row"><span class="stat-label">Trainee intake/year</span><span class="stat-value">~100</span></div>
+          <div class="stat-row"><span class="stat-label">TC application deadline</span><span class="stat-value">Mar 2026</span></div>
+        </div>
+        <div class="sidebar-card">
+          <div class="sidebar-head cc">Why This Firm — Tips</div>
+          <div style="padding:14px 16px;font-size:12.5px;line-height:1.75;color:#555;">
+            <p style="margin-bottom:8px;"><strong>DO mention:</strong> genuine global diversity (not just London with offices), US PE expansion, fintech/digital assets practice, CC Advance legal tech initiative.</p>
+            <p><strong>AVOID:</strong> Saying it's "one of the biggest." Specificity about practice areas or deals wins interviews.</p>
+          </div>
+        </div>
+        <div class="sidebar-card">
+          <div class="sidebar-head">Apply</div>
+          <div class="sidebar-links">
+            <a href="https://www.cliffordchance.com/careers/graduates.html" target="_blank" class="sidebar-link">Graduate Recruitment <span class="s-arrow">↗</span></a>
+            <a href="deadlines.html" class="sidebar-link">TC Deadlines <span class="s-arrow">→</span></a>
+            <a href="interview.html" class="sidebar-link">Interview Questions <span class="s-arrow">→</span></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── FRESHFIELDS ── -->
+  <div id="firm-fresh" class="page-section">
+    <div class="firm-profile-header card" style="background:var(--fresh);">
+      <div>
+        <div class="firm-name">Freshfields</div>
+        <div class="firm-hq">London · New York · Global — ~4,000 lawyers</div>
+      </div>
+      <div style="text-align:right;">
+        <div style="font-size:11px;color:rgba(255,255,255,.6);letter-spacing:1px;text-transform:uppercase;margin-bottom:4px;">NQ Salary</div>
+        <div style="font-family:'Frank Ruhl Libre',serif;font-size:28px;font-weight:900;color:white;">£150,000</div>
+      </div>
+    </div>
+    <div class="firm-stat-grid">
+      <div class="firm-stat-card"><div class="fsn">~£3M</div><div class="fsl">PEP (2025 record)</div></div>
+      <div class="firm-stat-card"><div class="fsn">~500</div><div class="fsl">US lawyers (doubled in 5 yrs)</div></div>
+      <div class="firm-stat-card"><div class="fsn">Top 5</div><div class="fsl">Global M&A adviser by deal value</div></div>
+    </div>
+    <div class="two-col">
+      <div>
+        <div class="section-head"><h2>What They're Known For Right Now</h2></div>
+        <div class="card" style="padding:20px 24px;margin-bottom:12px;">
+          <p style="font-size:14px;line-height:1.75;color:#333;margin-bottom:12px;">Freshfields is having its strongest run in a decade. The US expansion strategy — ~500 US lawyers, up from ~200 five years ago — has broken the firm into the global top five M&A advisers by deal value. This is genuinely unprecedented for a London-headquartered firm.</p>
+          <p style="font-size:14px;line-height:1.75;color:#333;">Their <strong>M&A, antitrust/competition and disputes</strong> practices are elite globally. Freshfields is the firm of choice for hostile takeovers, complex regulatory clearances and bet-the-company litigation.</p>
+        </div>
+        <div class="section-head"><h2>Strategic Direction 2025–26</h2></div>
+        <div class="card" style="padding:20px 24px;margin-bottom:12px;">
+          <ul style="font-size:14px;line-height:2;padding-left:18px;color:#333;">
+            <li>Continued aggressive US growth — targeting top-10 US PE firms as clients</li>
+            <li>Record 2025 revenues signal the US bet is paying off — more lateral hires planned</li>
+            <li>Antitrust/competition practice is the busiest in its history given global regulatory scrutiny of tech M&A</li>
+            <li>Disputes and international arbitration growing — geopolitical complexity driving demand</li>
+          </ul>
+        </div>
+        <div class="section-head"><h2>Recent Deals to Reference</h2></div>
+        <div class="list-item" style="margin-bottom:2px;"><span class="list-dot" style="background:var(--fresh)"></span><span class="list-title">Advised on multiple $10B+ US M&A transactions in 2025 — record year</span></div>
+        <div class="list-item" style="margin-bottom:2px;"><span class="list-dot" style="background:var(--fresh)"></span><span class="list-title">Lead competition counsel on major tech sector merger clearance — 2025</span></div>
+        <div class="list-item" style="margin-bottom:2px;"><span class="list-dot" style="background:var(--fresh)"></span><span class="list-title">Record PEP of ~£3M disclosed — Feb 2026</span></div>
+      </div>
+      <div class="sidebar">
+        <div class="sidebar-card">
+          <div class="sidebar-head fresh">Key Numbers</div>
+          <div class="stat-row"><span class="stat-label">First-year trainee</span><span class="stat-value">£56,000</span></div>
+          <div class="stat-row"><span class="stat-label">Second-year trainee</span><span class="stat-value">£61,000</span></div>
+          <div class="stat-row"><span class="stat-label">NQ salary</span><span class="stat-value">£150,000</span></div>
+          <div class="stat-row"><span class="stat-label">Trainee intake/year</span><span class="stat-value">~90</span></div>
+          <div class="stat-row"><span class="stat-label">TC application deadline</span><span class="stat-value">Mar 2026</span></div>
+        </div>
+        <div class="sidebar-card">
+          <div class="sidebar-head fresh">Why This Firm — Tips</div>
+          <div style="padding:14px 16px;font-size:12.5px;line-height:1.75;color:#555;">
+            <p style="margin-bottom:8px;"><strong>DO mention:</strong> the US growth story and what it means for deal quality; M&A + competition synergy; the record 2025 revenue year.</p>
+            <p><strong>AVOID:</strong> Saying you want to work there because it's "prestigious." Every applicant says this. Talk about specific practice strengths.</p>
+          </div>
+        </div>
+        <div class="sidebar-card">
+          <div class="sidebar-head">Apply</div>
+          <div class="sidebar-links">
+            <a href="https://www.freshfields.com/en-gb/about/careers/graduates-and-students/" target="_blank" class="sidebar-link">Graduate Recruitment <span class="s-arrow">↗</span></a>
+            <a href="deadlines.html" class="sidebar-link">TC Deadlines <span class="s-arrow">→</span></a>
+            <a href="interview.html" class="sidebar-link">Interview Questions <span class="s-arrow">→</span></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── LINKLATERS ── -->
+  <div id="firm-link" class="page-section">
+    <div class="firm-profile-header card" style="background:var(--link);">
+      <div>
+        <div class="firm-name">Linklaters</div>
+        <div class="firm-hq">London · New York · Global — ~3,000 lawyers</div>
+      </div>
+      <div style="text-align:right;">
+        <div style="font-size:11px;color:rgba(255,255,255,.6);letter-spacing:1px;text-transform:uppercase;margin-bottom:4px;">NQ Salary</div>
+        <div style="font-family:'Frank Ruhl Libre',serif;font-size:28px;font-weight:900;color:white;">£150,000</div>
+      </div>
+    </div>
+    <div class="firm-stat-grid">
+      <div class="firm-stat-card"><div class="fsn">34</div><div class="fsl">New partners in 2025 (MC high)</div></div>
+      <div class="firm-stat-card"><div class="fsn">£2.2M</div><div class="fsl">Profit per equity partner</div></div>
+      <div class="firm-stat-card"><div class="fsn">Fastest</div><div class="fsl">MC US revenue growth rate</div></div>
+    </div>
+    <div class="two-col">
+      <div>
+        <div class="section-head"><h2>What They're Known For Right Now</h2></div>
+        <div class="card" style="padding:20px 24px;margin-bottom:12px;">
+          <p style="font-size:14px;line-height:1.75;color:#333;margin-bottom:12px;">Linklaters is known for its <strong>capital markets, M&A and financial regulation</strong> practices. It's the go-to firm for complex debt capital markets work in Europe and has a particularly strong emerging markets practice — the Egypt sovereign bond in 2026 is a recent example.</p>
+          <p style="font-size:14px;line-height:1.75;color:#333;">The firm made the most partner promotions in the Magic Circle in 2025 (34) — a signal of confidence in growth. US revenue grew fastest in percentage terms, driven by Shearman & Sterling lateral hires in M&A.</p>
+        </div>
+        <div class="section-head"><h2>Recent Deals to Reference</h2></div>
+        <div class="list-item" style="margin-bottom:2px;"><span class="list-dot" style="background:var(--link)"></span><span class="list-title">Egypt $2B sovereign bond return — Feb 2026</span></div>
+        <div class="list-item" style="margin-bottom:2px;"><span class="list-dot" style="background:var(--link)"></span><span class="list-title">34 new partners promoted — 2025 (MC record)</span></div>
+        <div class="list-item" style="margin-bottom:2px;"><span class="list-dot" style="background:var(--link)"></span><span class="list-title">Advised on major EMEA tech sector M&A — 2025</span></div>
+      </div>
+      <div class="sidebar">
+        <div class="sidebar-card">
+          <div class="sidebar-head link">Key Numbers</div>
+          <div class="stat-row"><span class="stat-label">First-year trainee</span><span class="stat-value">£56,000</span></div>
+          <div class="stat-row"><span class="stat-label">NQ salary</span><span class="stat-value">£150,000</span></div>
+          <div class="stat-row"><span class="stat-label">Trainee intake/year</span><span class="stat-value">~90</span></div>
+          <div class="stat-row"><span class="stat-label">PEP</span><span class="stat-value">£2.2M</span></div>
+        </div>
+        <div class="sidebar-card">
+          <div class="sidebar-head link">Why This Firm — Tips</div>
+          <div style="padding:14px 16px;font-size:12.5px;line-height:1.75;color:#555;">
+            <p><strong>DO mention:</strong> emerging markets depth, capital markets strength, fastest US growth story. Reference the Egypt deal or any recent capital markets mandate. Show awareness of record partner promotions signalling growth.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── SLAUGHTER AND MAY ── -->
+  <div id="firm-slaughter" class="page-section">
+    <div class="firm-profile-header card" style="background:var(--slaughter);">
+      <div>
+        <div class="firm-name">Slaughter and May</div>
+        <div class="firm-hq">London · Brussels · Hong Kong · Beijing</div>
+      </div>
+      <div style="text-align:right;">
+        <div style="font-size:11px;color:rgba(255,255,255,.6);letter-spacing:1px;text-transform:uppercase;margin-bottom:4px;">NQ Salary</div>
+        <div style="font-family:'Frank Ruhl Libre',serif;font-size:28px;font-weight:900;color:white;">~£125k+</div>
+      </div>
+    </div>
+    <div class="firm-stat-grid">
+      <div class="firm-stat-card"><div class="fsn">~500</div><div class="fsl">Lawyers (intentionally small)</div></div>
+      <div class="firm-stat-card"><div class="fsn">6</div><div class="fsl">New partners in 2025</div></div>
+      <div class="firm-stat-card"><div class="fsn">No</div><div class="fsl">Billing targets — unique model</div></div>
+    </div>
+    <div class="two-col">
+      <div>
+        <div class="section-head"><h2>What Makes Slaughter and May Different</h2></div>
+        <div class="card" style="padding:20px 24px;margin-bottom:12px;">
+          <p style="font-size:14px;line-height:1.75;color:#333;margin-bottom:12px;">Slaughter and May is deliberately different from the other four. It has intentionally stayed small, resisted US expansion, has no billing targets, and works through a <strong>"best friend" network</strong> of independent local firms rather than opening its own offices globally.</p>
+          <p style="font-size:14px;line-height:1.75;color:#333;margin-bottom:12px;">The quality of work is exceptionally high — the firm is consistently instructed on the most complex and sensitive UK M&A, corporate governance and financial regulation matters. It advises a disproportionate share of FTSE 100 companies relative to its size.</p>
+          <p style="font-size:14px;line-height:1.75;color:#333;">The culture is genuinely collaborative, less hierarchical and less pressured than peers. Trainees get more early responsibility because the firm is smaller. NQ retention rate is very high.</p>
+        </div>
+        <div class="section-head"><h2>Strategic Direction 2025–26</h2></div>
+        <div class="card" style="padding:20px 24px;margin-bottom:12px;">
+          <ul style="font-size:14px;line-height:2;padding-left:18px;color:#333;">
+            <li>Signals of private credit expansion — would be a significant strategic shift</li>
+            <li>Deliberately holding firm on its distinctive model while peers chase US market</li>
+            <li>Benefiting from clients who want deep UK expertise rather than global sprawl</li>
+            <li>Pay structure differs: no lock-step, biannual reviews — competitive but not matching £150k peers yet</li>
+          </ul>
+        </div>
+      </div>
+      <div class="sidebar">
+        <div class="sidebar-card">
+          <div class="sidebar-head slaughter">Key Numbers</div>
+          <div class="stat-row"><span class="stat-label">First-year trainee</span><span class="stat-value">~£50,000</span></div>
+          <div class="stat-row"><span class="stat-label">NQ salary</span><span class="stat-value">~£125k+</span></div>
+          <div class="stat-row"><span class="stat-label">Trainee intake/year</span><span class="stat-value">~85</span></div>
+          <div class="stat-row"><span class="stat-label">Billing targets</span><span class="stat-value">None</span></div>
+        </div>
+        <div class="sidebar-card">
+          <div class="sidebar-head slaughter">Why This Firm — Tips</div>
+          <div style="padding:14px 16px;font-size:12.5px;line-height:1.75;color:#555;">
+            <p style="margin-bottom:8px;"><strong>DO mention:</strong> the intentional model — small size, no billing targets, best friend network. Show you've thought about what this means for the quality and type of work trainees get.</p>
+            <p><strong>AVOID:</strong> Applying to Slaughter because you couldn't get into the other four. They can smell this. Know their model inside out.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div><!-- /page -->
+
+<div id="footer-shell"></div>
+<script src="site.js"></script>
+<script>
+document.getElementById('shell').innerHTML = SITE.nav('firms');
+document.getElementById('footer-shell').innerHTML = SITE.footer();
+SITE.initDate();
+
+// Check hash on load
+const hashFirm = window.location.hash.replace('#','');
+if (hashFirm) showFirm(hashFirm, null);
+
+function showFirm(id, btn) {
+  document.querySelectorAll('.page-section').forEach(s => s.classList.remove('active'));
+  document.getElementById('firm-' + id).classList.add('active');
+  document.querySelectorAll('.chip').forEach(c => c.classList.remove('active'));
+  if (btn) btn.classList.add('active');
+  else {
+    const chips = document.querySelectorAll('.chip');
+    const map = {ao:0,cc:1,fresh:2,link:3,slaughter:4};
+    if (map[id] !== undefined) chips[map[id]].classList.add('active');
+  }
+  window.scrollTo({top: 0, behavior: 'smooth'});
+}
+</script>
+</body>
+</html>
