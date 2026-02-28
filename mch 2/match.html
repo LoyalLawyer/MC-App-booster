@@ -831,49 +831,85 @@ Return ONLY valid JSON:
   "case_search_query": "a specific Google search query to find 2-3 real recent cases or deals this firm worked on that would interest THIS specific student based on their profile — be specific e.g. 'Freshfields antitrust technology merger 2024 2025' or 'Linklaters emerging markets sovereign bond 2025'"
 }`;
 
-  try {
-    const matchRes = await fetch('/.netlify/functions/ai', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ prompt: matchPrompt, useSearch: false })
-    });
-    const matchData = await matchRes.json();
-    const matchText = matchData.text.replace(/```json|```/g, '').trim();
-    const match = JSON.parse(matchText);
-
-    // STEP 2: Search for real cases
-    const casePrompt = `Search the web and find 3 real, specific, recent (2023-2026) legal cases, deals or mandates that ${match.top_firm} worked on.
-
-The student's interests are: ${answers['a2']} and sectors: ${answers['a10']}.
-
-For each case/deal found, provide:
-- The real name or description of the deal/case
-- What ${match.top_firm}'s role was
-- Why this specific student (interested in ${answers['a2']} and ${answers['a10']}) would find it interesting
-- A source URL if available
-
-Format as a clear list. Be specific — use real deal names, real company names, real dates. Do not invent cases.`;
-
-    const caseRes = await fetch('/.netlify/functions/ai', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ prompt: casePrompt, useSearch: true })
-    });
-    const caseData = await caseRes.json();
-
-    document.getElementById('loadingScreen').style.display = 'none';
-    renderResults(match, caseData.text, caseData.sources || []);
-
-  } catch(err) {
+  function showError(title, detail) {
     document.getElementById('loadingScreen').style.display = 'none';
     document.getElementById('resultsScreen').style.display = 'block';
     document.getElementById('resultsScreen').innerHTML = `
-      <div style="background:var(--white);border:1px solid var(--border);padding:40px;text-align:center;">
-        <div style="font-size:28px;margin-bottom:12px;">⚠️</div>
-        <div style="font-family:'Frank Ruhl Libre',serif;font-size:20px;font-weight:700;margin-bottom:8px;">Something went wrong</div>
-        <div style="font-size:13px;color:var(--muted);margin-bottom:20px;">Error: ${err.message}<br><br>Make sure the site is deployed on Netlify with the API key configured.</div>
-        <button onclick="location.reload()" style="padding:10px 24px;background:var(--ink);color:white;border:none;font-family:'DM Sans',sans-serif;font-size:13px;cursor:pointer;">Try Again</button>
-      </div>`;
+      <div style="background:var(--white);border:1px solid var(--border);padding:40px;">
+        <div style="font-size:28px;margin-bottom:12px;text-align:center;">⚠️</div>
+        <div style="font-family:'Frank Ruhl Libre',serif;font-size:20px;font-weight:700;margin-bottom:12px;text-align:center;">${title}</div>
+        <div style="font-size:13px;color:#333;background:#f5f5f5;padding:16px;border:1px solid #ddd;margin-bottom:20px;word-break:break-all;white-space:pre-wrap;font-family:monospace;">${detail}</div>
+        <div style="text-align:center;"><button onclick="location.reload()" style="padding:10px 24px;background:var(--ink);color:white;border:none;font-family:'DM Sans',sans-serif;font-size:13px;cursor:pointer;">Try Again</button></div>
+      </div>\`;
+  }
+
+  try {
+    let matchRes;
+    try {
+      matchRes = await fetch('/.netlify/functions/ai', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ prompt: matchPrompt, useSearch: false })
+      });
+    } catch(fetchErr) {
+      showError('Cannot reach function', 'Error: ' + fetchErr.message + '\n\nMake sure you are on the Netlify URL, not opening the file locally.');
+      return;
+    }
+
+    const matchRaw = await matchRes.text();
+
+    if (!matchRes.ok) {
+      showError('Function error HTTP ' + matchRes.status, matchRaw.slice(0, 800));
+      return;
+    }
+
+    let matchData;
+    try { matchData = JSON.parse(matchRaw); }
+    catch(e) { showError('Non-JSON from function', matchRaw.slice(0, 800)); return; }
+
+    if (matchData.error) {
+      showError('Gemini API error', matchData.error + (matchData.debug ? '\n\n' + matchData.debug : '') + (matchData.raw ? '\n\n' + matchData.raw : ''));
+      return;
+    }
+
+    if (!matchData.text) {
+      showError('Empty AI response', JSON.stringify(matchData).slice(0, 800));
+      return;
+    }
+
+    let match;
+    try {
+      const cleaned = matchData.text.replace(/```json|```/g, '').trim();
+      match = JSON.parse(cleaned);
+    } catch(e) {
+      showError('Could not parse AI result — raw response below', matchData.text.slice(0, 800));
+      return;
+    }
+
+    // STEP 2: Real cases search
+    const casePrompt = `Find 3 real recent legal deals that ${match.top_firm} worked on in 2023-2025. Student interests: ${answers['a2']}, sectors: ${answers['a10']}. For each: deal name, firm role, why relevant. Real names and dates only.`;
+
+    let casesText = '';
+    let caseSources = [];
+    try {
+      const caseRes = await fetch('/.netlify/functions/ai', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ prompt: casePrompt, useSearch: true })
+      });
+      const caseRaw = await caseRes.text();
+      const caseData = JSON.parse(caseRaw);
+      casesText = caseData.text || 'Could not load cases.';
+      caseSources = caseData.sources || [];
+    } catch(e) {
+      casesText = 'Live case search unavailable — your match analysis is complete above.';
+    }
+
+    document.getElementById('loadingScreen').style.display = 'none';
+    renderResults(match, casesText, caseSources);
+
+  } catch(err) {
+    showError('Unexpected error', err.message);
   }
 }
 
@@ -997,3 +1033,4 @@ function renderResults(match, casesText, sources) {
 </script>
 </body>
 </html>
+
